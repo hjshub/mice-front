@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko" class="active">
+  <head>
+    @@include('../include/head.html', { page_main: false, page_name: "MICE산업지식활용", page_title:"채용정보 | 채용마당" })
+  </head>
+  <body>
+    @@include('../include/skipNav.html')
+
+    <div id="layout">
+      <!-- #gnb -->
+      <header id="gnb">@@include('../include/gnb.html')</header>
+      <!-- // #gnb -->
+
+      <!-- #contents -->
+      <main id="contents" class="employment">
+        <h1 class="hidden-txt">채용정보</h1>
+
+        <!-- 상단 배너 -->
+        <section class="subTop">
+          <div class="inner-wrap">
+            <h2>
+              <strong class="txt-scd-b">employment</strong><br />
+              <span class="txt-scd-r">MICE 산업은 여러분이 꼭 필요해요!</span>
+            </h2>
+          </div>
+        </section>
+        <section class="contents list info">
+          <nav class="breadCrumb">
+            <div class="inner-wrap clear">
+              <div class="bx-left pc-only">
+                <span>
+                  <a href="">
+                    <i class="icon icon-home">
+                      <em class="hidden-txt">홈</em>
+                    </i>
+                  </a>
+                </span>
+                <span><a href="">채용마당</a></span>
+                <span><a href="">채용정보</a></span>
+              </div>
+              <div class="bx-right">
+                <form action="">
+                  <fieldset>
+                    <legend>검색</legend>
+                    <span>
+                      <input type="text" name="" id="" placeholder="검색어를 입력해주세요." />
+                      <button type="submit" class="button-search">
+                        <em class="hidden-txt">검색</em></i>
+                      </button>
+                    </span>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <div class="tab-menu">
+            <div class="inner-wrap">
+              <ul class="grid-wrap col-4-2 gap-none">
+                <li class="grid-item"><a href="#" class="current">채용정보</a></li>
+                <li class="grid-item"><a href="#">인재정보</a></li>
+                <li class="grid-item"><a href="#">MICE PRO 인재 신청</a></li>
+                <li class="grid-item"><a href="#">TOP 인재</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-wrap">
+            <div class="chk-wrap-type02 hashTag">
+              <span>
+                 <input type="checkbox" name="chk_all" id="chk_all" value="" checked="">
+                 <label for="chk_all"><em>전체</em></label>
+              </span>
+              <span>
+                 <input type="checkbox" name="chk_filter_a" id="chk_a" value="">
+                 <label for="chk_a"><em>정규직</em></label>
+              </span>
+              <span>
+                 <input type="checkbox" name="chk_filter_b" id="chk_b" value="">
+                 <label for="chk_b"><em>계약직</em></label>
+              </span>
+              <span>
+                 <input type="checkbox" name="chk_filter_c" id="chk_c" value="">
+                 <label for="chk_c"><em>행사운영요원</em></label>
+              </span>
+            </div>
+
+            <div class="sort">
+              <span><a href="" class="selected">최신순</a></span>
+              <span><a href="">마감일순</a></span>
+            </div>
+
+            <!-- pc -->
+            <div class="tblStyle pc-only">
+              <table>
+                <caption>
+                  채용정보 목록(상태, 회사, 모집공고, 조건, 채용기간으로 구성된 표)
+                </caption>
+                <colgroup>
+                  <col style="width: 12%" />
+                  <col style="width: 14%" />
+                  <col style="width: auto" />
+                  <col style="width: 10%" />
+                  <col style="width: 14%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">상태</th>
+                    <th scope="col">회사</th>
+                    <th scope="col">모집공고</th>
+                    <th scope="col">조건</th>
+                    <th scope="col">채용기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="status hiringNow">채용중</span>
+                    </td>
+                    <td>
+                      <b class="name">경주화백컨벤션뷰로</b><br/>
+                      <span>시설관리(전기, 건축)</span>
+                    </td>
+                    <td class="tit">
+                      <b><a href="">2022년 기간제근로자(육아휴직 대체인력 – 경력직) 채용 공고문</a></b>
+                    </td>
+                    <td>
+                      <span>정규직</span>
+                      <span>경력(3년이상)</span>
+                      <span>대졸 이상</span>
+                    </td>
+                    <td>
+                      <b class="txt-color skyblue">D - 10</b><br/>
+                      <span>2022-08-19</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- mobile -->
+            <div class="tblStyle mob-only">
+              <ul>
+                <li>
+                  <a href="">
+                    <div class="status">
+                      <span class="hiringNow">채용중</span>
+                    </div>
+                    <div class="tit">
+                      <b>2022년 기간제근로자(육아휴직 대체인력 – 경력직) 채용 공고문</b>
+                    </div>
+                    <dl>
+                      <dt>회사</dt>
+                      <dd>경주화백컨벤션뷰로</dd>
+                      <dd>시설관리(전기, 건축)</dd>
+                    </dl>
+                    <dl>
+                      <dt>조건</dt>
+                      <dd>정규직</dd>
+                      <dd>경력(3년이상)</dd>
+                      <dd>대졸 이상</dd>
+                    </dl>
+                    <dl>
+                      <dt>채용기간</dt>
+                      <dd><b class="txt-color skyblue">D - 10</b></dd>
+                      <dd>2022-08-19</dd>
+                    </dl>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="paging pc-only">
+              <a href="#" class="first disable"><em class="hidden-txt">첫 페이지</em></a>
+              <a href="#" class="prev disable"><em class="hidden-txt">이전 페이지</em></a>
+              <span>1</span>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#" class="next"><em class="hidden-txt">다음 페이지</em></a>
+              <a href="#" class="last"><em class="hidden-txt">마지막 페이지</em></a>
+            </div>
+
+            <div class="btn-wrap align-c mob-only">
+              <button type="button" class="btn-prev"><em>이전</em></button>
+              <span><b>1</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+              <button type="button" class="btn-next"><em>다음</em></button>
+            </div>
+        </div>
+        </section>
+      </main>
+      <!-- // #contents -->
+
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer.html')</footer>
+      <!-- // #footer -->
+    </div>
+  </body>
+</html>

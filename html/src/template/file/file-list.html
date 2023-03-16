@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('../include/head.html', { page_main: false, page_name: "MICE산업지식활용", page_title:"파일 목록" })
+
+    <style>
+      main {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        color: #000;
+      }
+      h1 {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+      [class^='tableStyle'] {
+        width: 100%;
+        margin-top: 30px;
+        font-size: 1.4rem;
+      }
+      [class^='tableStyle'] table {
+        width: 100%;
+        text-align: center;
+        table-layout: fixed;
+      }
+      [class^='tableStyle'] table th,
+      [class^='tableStyle'] table td {
+        border-style: solid;
+        border-color: #5dacf1;
+        line-height: 1.7;
+        padding: 8px 1.5rem;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      [class^='tableStyle'] table td {
+        text-align: left;
+      }
+      [class^='tableStyle'] table th {
+        border-width: 3px 0 1px 0px;
+      }
+      [class^='tableStyle'] table td {
+        border-width: 1px 0 0 1px;
+      }
+      [class^='tableStyle'] table td:first-of-type {
+        border-left: none;
+        text-align: center;
+      }
+      [class^='tableStyle'] table tr:first-of-type td {
+        border-top: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>File Index</h1>
+      </header>
+      <div class="contents">
+        <div class="tableStyle">
+          <table>
+            <caption>
+              목록
+            </caption>
+            <colgroup>
+              <col style="width: 7%" />
+              <col style="width: 12%" />
+              <col style="width: 12%" />
+              <col style="width: 12%" />
+              <col style="width: auto" />
+              <col style="width: 12%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th class="align-l" colspan="3" scope="col">구분</th>
+                <th scope="col">경로</th>
+                <th scope="col">진행 현황</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="count"></td>
+                <td colspan="3">메인</td>
+                <td><a href="../index.html" target="_blank">index.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td rowspan="2">공지사항</td>
+                <td colspan="2">목록</td>
+                <td><a href="../notice/list.html" target="_blank">notice/list.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td colspan="2">상세</td>
+                <td><a href="../notice/detail.html" target="_blank">notice/detail.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td rowspan="2">뉴스기사</td>
+                <td colspan="2">목록</td>
+                <td><a href="../news/list.html" target="_blank">news/list.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td colspan="2">상세</td>
+                <td><a href="../news/detail.html" target="_blank">news/detail.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td rowspan="2">영상게시판</td>
+                <td colspan="2">목록</td>
+                <td><a href="../video/list.html" target="_blank">video/list.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td colspan="2">상세</td>
+                <td><a href="../video/detail.html" target="_blank">video/detail.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td rowspan="10">채용마당</td>
+                <td rowspan="3">TOP인재</td>
+                <td>목록</td>
+                <td><a href="../employment/top_list.html" target="_blank">employment/top_list.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>상세</td>
+                <td><a href="../employment/top_detail.html" target="_blank">employment/top_detail.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>신청</td>
+                <td><a href="../employment/top_apply.html" target="_blank">employment/top_apply.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td rowspan="3">인재신청</td>
+                <td>목록</td>
+                <td><a href="../employment/micePro_apply_list.html" target="_blank">employment/micePro_apply_list.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>상세</td>
+                <td>
+                  <a href="../employment/micePro_apply_detail.html" target="_blank">employment/micePro_apply_detail.html</a>
+                </td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>신청</td>
+                <td><a href="../employment/micePro_apply.html" target="_blank">employment/micePro_apply.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td rowspan="2">인재정보</td>
+                <td>목록</td>
+                <td><a href="../employment/micePro_list.html" target="_blank">employment/micePro_list.html</a></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>상세</td>
+                <td><a href="../employment/micePro_detail.html" target="_blank">employment/micePro_detail.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td rowspan="2">채용정보</td>
+                <td>목록</td>
+                <td><a href="../employment/list.html" target="_blank">employment/list.html</a></td>
+                <td>작업 중</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>상세</td>
+                <td><a href="../employment/detail.html" target="_blank">employment/detail.html</a></td>
+                <td>완료</td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td colspan="3">협력업체 목록</td>
+                <td><a href="" target="_blank"></a></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const counts = document.querySelectorAll('.count');
+
+      counts.forEach((el, idx) => {
+        el.innerHTML = idx + 1;
+        console.log(el, idx);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,420 @@
+/**
+ * ==============================+
+ * modal
+ * ==============================+
+ */
+
+.dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+
+  &.cover {
+    z-index: 1000;
+  }
+}
+.modal {
+  display: none;
+  width: 300px;
+  position: absolute;
+  padding: 25px 30px;
+  top: 60px;
+  color: #fff3e5;
+  background-color: currentColor;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 6px 10px 2px rgb(56, 56, 56, 0.15);
+  box-shadow: 3px 6px 10px 2px rgb(56, 56, 56, 0.15);
+  // overflow: hidden;
+  z-index: 101;
+
+  @include _bp(821px) {
+    width: -webkit-calc(100vw - 60px) !important;
+    width: -moz-calc(100vw - 60px) !important;
+    width: calc(100vw - 60px) !important;
+  }
+
+  @include _bp(561px) {
+    width: -webkit-calc(100vw - 30px) !important;
+    width: -moz-calc(100vw - 30px) !important;
+    width: calc(100vw - 30px) !important;
+  }
+
+  @include _bp(361px) {
+    padding: 18px 15px;
+  }
+
+  &.fixed {
+    position: fixed;
+    width: 95%;
+    max-width: 700px;
+    top: 50%;
+    left: 50%;
+    background-color: $white;
+    z-index: 1001;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    @include transform(translate(-50%, -50%));
+
+    &::before {
+      display: none;
+      content: none;
+    }
+
+    .button-close {
+      top: 50%;
+      right: 30px;
+      margin-top: -9px;
+    }
+
+    .modal-header {
+      margin-bottom: 0;
+
+      h5 {
+        line-height: 60px;
+        border-bottom: 1px solid $gray;
+      }
+    }
+
+    .modal-body {
+      padding: 20px 25px 40px;
+
+      @include _bp(561px) {
+        padding: 15px 15px 25px;
+      }
+
+      @include _bp_landscape(821px) {
+        padding-bottom: 25px;
+      }
+
+      .modal-contents {
+        padding: 15px 10px;
+
+        .wish-list {
+          max-height: 250px;
+          padding: 5px 10px;
+
+          @include _bp(561px) {
+            padding: 5px;
+          }
+
+          @include _bp_landscape(821px) {
+            max-height: 150px;
+          }
+
+          ul {
+            width: 100%;
+            font-size: 0;
+
+            li {
+              display: inline-block;
+              width: -webkit-calc((100% - 30px) / 4);
+              width: -moz-calc((100% - 30px) / 4);
+              width: calc((100% - 30px) / 4);
+              padding: 12px;
+              background-color: $white;
+              border-radius: 5px;
+              box-shadow: 2px 2px 5px 1px rgba(179, 179, 179, 0.2);
+
+              & + li {
+                margin-left: 10px;
+              }
+
+              &:nth-of-type(4n + 1) {
+                margin-left: 0;
+              }
+
+              &:nth-of-type(4) ~ li {
+                margin-top: 10px;
+              }
+
+              @include _bp(821px) {
+                width: -webkit-calc((100% - 20px) / 3);
+                width: -moz-calc((100% - 20px) / 3);
+                width: calc((100% - 20px) / 3);
+
+                &:nth-of-type(4n + 1) {
+                  margin-left: 10px;
+                }
+
+                &:nth-of-type(3n + 1) {
+                  margin-left: 0;
+                }
+
+                &:nth-of-type(3) ~ li {
+                  margin-top: 10px;
+                }
+              }
+
+              @include _bp(561px) {
+                width: -webkit-calc((100% - 10px) / 2);
+                width: -moz-calc((100% - 10px) / 2);
+                width: calc((100% - 10px) / 2);
+
+                &:nth-of-type(3n + 1) {
+                  margin-left: 10px;
+                }
+
+                &:nth-of-type(2n + 1) {
+                  margin-left: 0;
+                }
+
+                &:nth-of-type(2) ~ li {
+                  margin-top: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 추천목록 생성가이드
+    &.guide {
+      max-width: 961px;
+      width: 65%;
+
+      @include _bp_landscape(821px) {
+        width: 70% !important;
+      }
+
+      .modal-body {
+        .modal-contents {
+          padding: 0;
+        }
+      }
+    }
+
+    // 마이페이지 관심분야 설정
+    &.wish {
+      .modal-body {
+        .modal-contents {
+          background-color: #f9f9f9;
+        }
+      }
+    }
+
+    // 마이페이지 영상 다운로드 반려내역
+    &.reject {
+      max-width: 500px;
+
+      .modal-body {
+        p {
+          * {
+            vertical-align: top;
+          }
+
+          & + p {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  /* modal 백그라운드 컬러*/
+  &.purple {
+    color: #f4e9ff;
+  }
+
+  &.ivory {
+    color: #fff8e9;
+  }
+
+  /* modal 위치 설정 */
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 100%;
+    margin-right: -80px;
+
+    &::before {
+      right: 50px;
+    }
+  }
+
+  /* 화살표 */
+  &::before {
+    position: absolute;
+    top: -10px;
+    border-width: 0 11px 11px 11px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: currentColor;
+    content: '';
+  }
+
+  /* SNS 공유 */
+  &.share {
+    &.type02 {
+      width: 330px;
+    }
+
+    @include _bp(1280px) {
+      margin-right: -92px;
+    }
+
+    &::before {
+      @include _bp(1280px) {
+        right: 63px;
+      }
+    }
+
+    .sns-list {
+      display: inline-block;
+      font-size: 0;
+
+      li {
+        display: inline-block;
+
+        a {
+          &::before {
+            width: 34px;
+            height: 34px;
+            background-image: url('../images/icon-set-sns.png');
+            background-repeat: no-repeat;
+            content: '';
+          }
+
+          &.share-facebook::before {
+            background-position: -2px -54px;
+          }
+
+          &.share-twitter::before {
+            background-position: -49px -54px;
+          }
+
+          &.share-kakaotalk::before,
+          &.share-kakaotalk-m::before {
+            background-position: -95px -54px;
+          }
+
+          &.share-N_blog::before {
+            background-position: -141px -54px;
+          }
+
+          &.share-URL::before {
+            background-position: -187px -54px;
+          }
+
+          &.share-vdURL::before {
+            background-position: -231px -55px;
+          }
+        }
+
+        & + li {
+          margin-left: 13px;
+        }
+      }
+    }
+  }
+
+  .modal-header {
+    margin-bottom: 40px;
+    position: relative;
+    color: #010101;
+
+    h5 {
+      font-size: 2rem;
+      line-height: 1;
+
+      em {
+        display: inline-block;
+        color: $gray !important;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 10px;
+      }
+
+      &.finish {
+        padding-top: 84px;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -32px;
+          width: 64px;
+          height: 64px;
+          background-image: url('../images/icon-finish.png');
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          content: '';
+        }
+      }
+    }
+  }
+
+  .modal-body {
+    padding-top: 0;
+    line-height: 1;
+    color: #010101;
+    font-size: 1.6rem;
+
+    .modal-contents {
+      &.customedScroll {
+        padding-right: 20px;
+      }
+    }
+
+    p {
+      line-height: 1.5;
+      vertical-align: top;
+
+      & + p {
+        margin-top: 10px;
+      }
+
+      * {
+        vertical-align: top;
+      }
+    }
+
+    &.finish {
+      p {
+        color: $gray;
+      }
+
+      .btn-wrap {
+        margin-top: 35px;
+      }
+    }
+  }
+
+  .button-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      background-image: url('../images/icon-close.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      content: '';
+    }
+
+    &.type02 {
+      &::before {
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/icon-close-gr.png');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        content: '';
+      }
+    }
+  }
+}
