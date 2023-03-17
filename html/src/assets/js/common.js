@@ -174,6 +174,9 @@ gb.CommonFunction = (function () {
           height: '100vh',
           'overflow-y': 'hidden',
         });
+        if (!gb.main.length) {
+          gb.html.removeClass('active');
+        }
       }
     });
 
@@ -188,6 +191,9 @@ gb.CommonFunction = (function () {
         height: 'auto',
         'overflow-y': 'visible',
       });
+      if (!gb.main.length) {
+        gb.html.addClass('active');
+      }
     };
 
     $('.depth1')
@@ -377,6 +383,32 @@ gb.CommonFunction = (function () {
       $(this).closest('.tooltip').prev('button').removeClass('on');
     });
   };
+  const dropDown = () => {
+    gb.dropDown = document.querySelectorAll('.dropDown');
+
+    gb.dropDown.forEach(function (elem) {
+      elem.addEventListener('mouseenter', function () {
+        this.children[1].style.opacity = 1;
+        this.children[1].style.visibility = 'visible';
+        this.children[1].style.pointerEvents = 'auto';
+      });
+      elem.addEventListener('focusin', function () {
+        this.children[1].style.opacity = 1;
+        this.children[1].style.visibility = 'visible';
+        this.children[1].style.pointerEvents = 'auto';
+      });
+      elem.addEventListener('mouseleave', function () {
+        this.children[1].style.opacity = 0;
+        this.children[1].style.visibility = 'hidden';
+        this.children[1].style.pointerEvents = 'none';
+      });
+      elem.addEventListener('focusout', function () {
+        this.children[1].style.opacity = 0;
+        this.children[1].style.visibility = 'hidden';
+        this.children[1].style.pointerEvents = 'none';
+      });
+    });
+  };
   const checkAlll = () => {
     // 전체 선택
     const checkItemAll = $('input[type=checkbox][name^=chk_all]');
@@ -419,6 +451,7 @@ gb.CommonFunction = (function () {
     toolTip();
     checkAlll();
     vdPlay();
+    dropDown();
   };
 
   return {

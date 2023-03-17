@@ -441,6 +441,16 @@ button {
     @include transition(none !important);
   }
 
+  &.auto {
+    span {
+      input[type='checkbox'] {
+        & + label {
+          min-width: auto;
+        }
+      }
+    }
+  }
+
   span {
     display: inline-block;
     font-size: 0;
@@ -476,7 +486,7 @@ button {
         vertical-align: top;
         line-height: 46px;
         border-radius: 24px;
-        padding: 0 20px;
+        padding: 0 15px;
         color: $navy;
         border: 2px solid currentColor;
         background-color: $white;
@@ -767,11 +777,11 @@ button {
 
     thead th {
       border-color: 1px solid $navy;
+      height: 80px;
     }
 
     th,
     td {
-      height: 80px;
       padding: 0;
       text-align: center;
       font-size: 1.8rem;
@@ -796,12 +806,15 @@ button {
     }
 
     td {
+      padding: 30px 0;
+
       &.tit {
-        padding: 0 30px;
+        padding: 30px;
         text-align: left;
+        color: $navy;
 
         @include _bp(1024px) {
-          padding: 0 10px;
+          padding: 10px;
         }
 
         * {
@@ -875,6 +888,11 @@ button {
             background-color: $skyblue;
           }
         }
+      }
+
+      .name {
+        font-size: 2rem;
+        color: $navy;
       }
     }
   }
@@ -997,7 +1015,7 @@ button {
           & + dd {
             &::before {
               margin-right: 5px;
-              content: '/';
+              content: '//';
             }
           }
         }

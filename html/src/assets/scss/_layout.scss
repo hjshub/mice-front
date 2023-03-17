@@ -131,6 +131,11 @@ html {
         }
       }
     }
+    &.fixed {
+      #gnb {
+        box-shadow: 0 1px 10px 2px rgba(79, 82, 98, 0.1);
+      }
+    }
     &:not(.fixed) {
       #gnb {
         transform: translateY(0) !important;
@@ -206,6 +211,15 @@ textarea {
 .txt-color {
   &.skyblue {
     color: $skyblue !important;
+  }
+  &.red {
+    color: $red !important;
+  }
+  &.blueGray {
+    color: $blueGray !important;
+  }
+  &.navy {
+    color: $navy !important;
   }
 }
 .clear {

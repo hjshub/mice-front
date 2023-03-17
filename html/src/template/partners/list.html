@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" class="active">
   <head>
-    @@include('../include/head.html', { page_main: false, page_title:'교육영상자료' })
+    @@include('../include/head.html', { page_main: false, page_title:'협력업체' })
   </head>
   <body>
     @@include('../include/skipNav.html')
@@ -12,15 +12,15 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <main id="contents" class="video">
-        <h1 class="hidden-txt">교육영상자료</h1>
+      <main id="contents" class="partners">
+        <h1 class="hidden-txt">협력업체</h1>
 
         <!-- 상단 배너 -->
         <section class="subTop">
           <div class="inner-wrap">
             <h2>
-              <strong class="txt-scd-b">Information</strong><br />
-              <span class="txt-scd-r">쉽고 재미있는 교육영상을 통해 MICE 산업을 알아 볼까요?</span>
+              <strong class="txt-scd-b">협력업체</strong><br />
+              <span class="txt-scd-r">MICE의 협력업체 목록을 함께보아요.</span>
             </h2>
           </div>
         </section>
@@ -35,7 +35,7 @@
                     </i>
                   </a>
                 </span>
-                <span><a href="">교육영상자료</a></span>
+                <span><a href="">협력업체</a></span>
               </div>
               <div class="bx-right">
                 <form action="">
@@ -54,80 +54,98 @@
           </nav>
           <div class="inner-wrap">
             <header>
-              <div class="chk-wrap-type02 hashTag">
+              <div class="chk-wrap-type02 hashTag auto">
                 <span>
-                   <input type="checkbox" name="chk_all" id="chk_all" value="" checked="">
+                   <input type="checkbox" name="chk_all" id="chk_all" value="">
                    <label for="chk_all"><em>전체</em></label>
                 </span>
                 <span>
                    <input type="checkbox" name="chk_filter_a" id="chk_a" value="">
-                   <label for="chk_a"><em>사전교육</em></label>
+                   <label for="chk_a"><em>컨벤션</em></label>
                 </span>
                 <span>
-                   <input type="checkbox" name="chk_filter_b" id="chk_b" value="">
-                   <label for="chk_b"><em>공통교육</em></label>
+                   <input type="checkbox" name="chk_filter_b" id="chk_b" value="" checked="">
+                   <label for="chk_b"><em>보안</em></label>
                 </span>
                 <span>
                    <input type="checkbox" name="chk_filter_c" id="chk_c" value="">
-                   <label for="chk_c"><em>전시기획</em></label>
+                   <label for="chk_c"><em>마케팅</em></label>
                 </span>
                 <span>
-                   <input type="checkbox" name="chk_filter_d" id="chk_d" value="">
-                   <label for="chk_d"><em>디지털 과정</em></label>
+                   <input type="checkbox" name="chk_filter_d" id="chk_d" value="" checked="">
+                   <label for="chk_d"><em>통역</em></label>
                 </span>
                 <span>
                    <input type="checkbox" name="chk_filter_e" id="chk_e" value="">
-                   <label for="chk_e"><em>회의기획</em></label>
+                   <label for="chk_e"><em>대관</em></label>
                 </span>
                 <span>
                    <input type="checkbox" name="chk_filter_f" id="chk_f" value="">
-                   <label for="chk_f"><em>사례분석</em></label>
+                   <label for="chk_f"><em>조명</em></label>
+                </span>
+                <span>
+                   <input type="checkbox" name="chk_filter_g" id="chk_g" value="">
+                   <label for="chk_g"><em>식사</em></label>
+                </span>
+                <span>
+                   <input type="checkbox" name="chk_filter_h" id="chk_h" value="">
+                   <label for="chk_h"><em>기념품</em></label>
+                </span>
+                <span>
+                   <input type="checkbox" name="chk_filter_i" id="chk_i" value="">
+                   <label for="chk_i"><em>음향</em></label>
+                </span>
+                <span>
+                   <input type="checkbox" name="chk_filter_j" id="chk_j" value="">
+                   <label for="chk_j"><em>카메라</em></label>
                 </span>
               </div>
               <div class="btn-wrap align-c">
                 <button class="btn-more wide rounded border" type="button"><em>더보기</em></button>
               </div>
             </header>
-            
-            <article>
-              <header class="hidden-txt">
-                <h3>교육영상목록</h3>
-              </header>
-              <div class="sort">
-                <span><a href="" class="selected">최신순</a></span>
-                <span><a href="">조회순</a></span>
-                <span><a href="">인기순</a></span>
-              </div>
-              <div class="list">
-                <ul class="grid-wrap col-4">
-                  @@for(var i = 5; i < 13; i++){
-                  <li class="grid-item">
-                    <a href="">
-                      <div class="bx-img">
-                        <img src="https://picsum.photos/296/164?random=`+i+`" alt="" />
-                      </div>
-                      <div class="bx-txt">
-                        <dl>
-                          <dt>전시기획</dt>
-                          <dd>회의유치</dd>
-                        </dl>
-                      </div>
-                      <div class="bx-etc">
-                        <dl>
-                          <dt>등록일</dt>
-                          <dd>2022-08-19</dd>
-                          <dt class="play"><em class="hidden-txt">조회수</em></dt>
-                          <dd>235</dd>
-                          <dt class="like"><em class="hidden-txt">좋아요</em></dt>
-                          <dd>004</dd>
-                        </dl>
-                      </div>
-                    </a>
-                  </li>
-                  }
-                </ul>
-              </div>
-            </article>
+
+            <form action="">
+              <article>
+                <header class="hidden-txt">
+                  <h3>협력업체목록</h3>
+                </header>
+                <div class="list">
+                  <ul class="grid-wrap col-4">
+                    @@for(var i = 1; i < 9; i++){
+                    <li class="grid-item">
+                      <a href="">
+                        <div class="bx-img">
+                          <img src="../../assets/images/sample/list-sample-thumb-03-0`+i+`.gif" alt="" />
+                        </div>
+                        <div class="bx-txt">
+                          <strong>㈜메씨인터내셔날 (MECI)</strong>
+                        </div>
+                        <div class="bx-etc">
+                          <dl>
+                            <dt>주요업무</dt>
+                            <dd>음향&#47;카메라&#47;네트워크</dd>
+                          </dl>
+                          <dl>
+                            <dt>대표이사</dt>
+                            <dd>김분희</dd>
+                          </dl>
+                          <dl>
+                            <dt>전화번호</dt>
+                            <dd>02-6288-6300</dd>
+                          </dl>
+                          <dl>
+                            <dt>홈페이지</dt>
+                            <dd class="txt-color skyblue">www.meci.co.kr</dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </li>
+                    }
+                  </ul>
+                </div>
+              </article>
+            </form>
             
             <div class="paging pc-only">
               <a href="#" class="first disable"><em class="hidden-txt">첫 페이지</em></a>
