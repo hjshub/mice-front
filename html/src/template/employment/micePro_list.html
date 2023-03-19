@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko" class="active">
+  <head>
+    @@include('../include/head.html', { page_main: false, page_title:'인재정보 | 채용마당' })
+  </head>
+  <body>
+    @@include('../include/skipNav.html')
+
+    <div id="layout">
+      <!-- #gnb -->
+      <header id="gnb">@@include('../include/gnb.html', { path:'..' })</header>
+      <!-- // #gnb -->
+
+      <!-- #contents -->
+      <main id="contents" class="employment">
+        <h1 class="hidden-txt">인재정보</h1>
+
+        <!-- 상단 배너 -->
+        <section class="subTop">
+          <div class="inner-wrap">
+            <h2>
+              <strong class="txt-scd-b">employment</strong><br />
+              <span class="txt-scd-r">MICE 산업은 여러분이 꼭 필요해요!</span>
+            </h2>
+          </div>
+        </section>
+        <section class="contents pro list">
+          <nav class="breadCrumb">
+            <div class="inner-wrap clear">
+              <div class="bx-left pc-only">
+                <span>
+                  <a href="../index.html">
+                    <i class="icon icon-home">
+                      <em class="hidden-txt">홈</em>
+                    </i>
+                  </a>
+                </span>
+                <span><a href="./list.html">채용마당</a></span>
+                <span><a href="./micePro_list.html">인재정보</a></span>
+              </div>
+              <div class="bx-right">
+                <form action="">
+                  <fieldset>
+                    <legend>검색</legend>
+                    <span>
+                      <input type="text" name="" id="" placeholder="검색어를 입력해주세요." />
+                      <button type="submit" class="button-search">
+                        <em class="hidden-txt">검색</em></i>
+                      </button>
+                    </span>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <div class="tab-menu">
+            <div class="inner-wrap">
+              <ul class="grid-wrap col-4-2 gap-none">
+                <li class="grid-item"><a href="./list.html">채용정보</a></li>
+                <li class="grid-item"><a href="./micePro_list.html" class="current">인재정보</a></li>
+                <li class="grid-item"><a href="./micePro_apply_list.html">MICE PRO 인재 신청</a></li>
+                <li class="grid-item"><a href="./top_list.html">TOP 인재</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-wrap">
+            <article class="verified">
+              <header>
+                <h3>MICE PRO 인재</h3>
+              </header>
+              <div class="list list-swiper2">
+                <div class="swiper-wrapper">
+                  @@for(var i = 0; i < 35; i++){
+                  <div class="swiper-slide">
+                    <div>
+                      <a href="./micePro_detail.html">
+                        <div class="info">
+                          <dl>
+                            <dt><b>김○○ `+i+`</b></dt>
+                            <dd><span>남</span><span>40세</span></dd>
+                          </dl>
+                          <p>
+                            사업기획, 운영 대 중국 비즈니스 전문성을 갖춘 채용 희망자 입니다.
+                            사업기획, 운영 대 중국 비즈니스 전문성을 갖춘 채용 희망자 입니다.
+                            사업기획, 운영 대 중국 비즈니스 전문성을 갖춘 채용 희망자 입니다.
+                            사업기획, 운영 대 중국 비즈니스 전문성을 갖춘 채용 희망자 입니다.
+                            사업기획, 운영 대 중국 비즈니스 전문성을 갖춘 채용 희망자 입니다.
+                          </p>
+                        </div>
+                        <div class="careers">
+                          <dl>
+                            <dt><b>경력</b></dt>
+                            <dd>15년</dd>
+                          </dl>
+                          <dl>
+                            <dt><b>학력</b></dt>
+                            <dd>대졸</dd>
+                          </dl>
+                          <dl>
+                            <dt><b>직무</b></dt>
+                            <dd>중국 영업, 마케팅</dd>
+                          </dl>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  }
+                </div>
+                <div class="swiper-scrollbar-customed type02"></div>
+              </div>
+            </article>
+
+            <article>
+              <div class="list">
+                <ul class="grid-wrap col-3">
+                  @@for(var i = 0; i < 6; i++){
+                  <li class="grid-item">
+                    <a href="./micePro_detail.html">
+                      <div class="info">
+                        <dl>
+                          <dt><b>이○○</b></dt>
+                          <dd><span>여</span><span>23세</span></dd>
+                        </dl>
+                        <p>
+                          회사와 함께 성장하는 사원이 되고 싶습니다.
+                          회사와 함께 성장하는 사원이 되고 싶습니다.
+                          회사와 함께 성장하는 사원이 되고 싶습니다.
+                          회사와 함께 성장하는 사원이 되고 싶습니다.
+                          회사와 함께 성장하는 사원이 되고 싶습니다.
+                        </p>
+                      </div>
+                      <div class="careers">
+                        <dl>
+                          <dt><b>경력</b></dt>
+                          <dd>5년</dd>
+                        </dl>
+                        <dl>
+                          <dt><b>학력</b></dt>
+                          <dd>대졸</dd>
+                        </dl>
+                        <dl>
+                          <dt><b>직무</b></dt>
+                          <dd>리셉션, 사무보조</dd>
+                        </dl>
+                      </div>
+                    </a>
+                  </li>
+                  }
+                </ul>
+              </div>
+            </article>
+
+            <div class="paging pc-only">
+              <a href="#" class="first disable"><em class="hidden-txt">첫 페이지</em></a>
+              <a href="#" class="prev disable"><em class="hidden-txt">이전 페이지</em></a>
+              <span>1</span>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#" class="next"><em class="hidden-txt">다음 페이지</em></a>
+              <a href="#" class="last"><em class="hidden-txt">마지막 페이지</em></a>
+            </div>
+  
+            <div class="btn-wrap align-c mob-only">
+              <button type="button" class="btn-prev"><em>이전</em></button>
+              <span><b>1</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+              <button type="button" class="btn-next"><em>다음</em></button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- // #contents -->
+
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer.html')</footer>
+      <!-- // #footer -->
+    </div>
+  </body>
+</html>

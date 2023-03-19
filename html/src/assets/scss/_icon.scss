@@ -128,20 +128,20 @@
   / 2); background-position: calc(-241px
   / 2) calc(-112px
   / 2); }
-  @mixin icon-close-wh{ width:15px; height:15px; background-position:-307px
-  -150px; } .icon-close-wh
+  @mixin icon-close-wh{ width:15px; height:15px; background-position:-299px
+  -187px; } .icon-close-wh
   { @include icon-close-wh; } @mixin icon--retina-close-wh{ width:-webkit-calc(15px
   / 2); width:-moz-calc(15px
   / 2); width:calc(15px
   / 2); height:-webkit-calc(15px
   / 2); height:-moz-calc(15px
   / 2); height:calc(15px
-  / 2); background-position: -webkit-calc(-307px
-  / 2) -webkit-calc(-150px
-  / 2); background-position: -moz-calc(-307px
-  / 2) -moz-calc(-150px
-  / 2); background-position: calc(-307px
-  / 2) calc(-150px
+  / 2); background-position: -webkit-calc(-299px
+  / 2) -webkit-calc(-187px
+  / 2); background-position: -moz-calc(-299px
+  / 2) -moz-calc(-187px
+  / 2); background-position: calc(-299px
+  / 2) calc(-187px
   / 2); }
   @mixin icon-facebook-2x{ width:68px; height:68px; background-position:-224px
   -237px; } .icon-facebook-2x
@@ -563,54 +563,9 @@
   / 2); background-position: calc(-418px
   / 2) calc(-213px
   / 2); }
-  @mixin icon-pg-first-gr{ width:14px; height:13px; background-position:-262px
+  @mixin icon-pg-first-gr{ width:14px; height:13px; background-position:-319px
   -187px; } .icon-pg-first-gr
   { @include icon-pg-first-gr; } @mixin icon--retina-pg-first-gr{ width:-webkit-calc(14px
-  / 2); width:-moz-calc(14px
-  / 2); width:calc(14px
-  / 2); height:-webkit-calc(13px
-  / 2); height:-moz-calc(13px
-  / 2); height:calc(13px
-  / 2); background-position: -webkit-calc(-262px
-  / 2) -webkit-calc(-187px
-  / 2); background-position: -moz-calc(-262px
-  / 2) -moz-calc(-187px
-  / 2); background-position: calc(-262px
-  / 2) calc(-187px
-  / 2); }
-  @mixin icon-pg-first{ width:14px; height:13px; background-position:-281px
-  -187px; } .icon-pg-first
-  { @include icon-pg-first; } @mixin icon--retina-pg-first{ width:-webkit-calc(14px
-  / 2); width:-moz-calc(14px
-  / 2); width:calc(14px
-  / 2); height:-webkit-calc(13px
-  / 2); height:-moz-calc(13px
-  / 2); height:calc(13px
-  / 2); background-position: -webkit-calc(-281px
-  / 2) -webkit-calc(-187px
-  / 2); background-position: -moz-calc(-281px
-  / 2) -moz-calc(-187px
-  / 2); background-position: calc(-281px
-  / 2) calc(-187px
-  / 2); }
-  @mixin icon-pg-last-gr{ width:14px; height:13px; background-position:-300px
-  -187px; } .icon-pg-last-gr
-  { @include icon-pg-last-gr; } @mixin icon--retina-pg-last-gr{ width:-webkit-calc(14px
-  / 2); width:-moz-calc(14px
-  / 2); width:calc(14px
-  / 2); height:-webkit-calc(13px
-  / 2); height:-moz-calc(13px
-  / 2); height:calc(13px
-  / 2); background-position: -webkit-calc(-300px
-  / 2) -webkit-calc(-187px
-  / 2); background-position: -moz-calc(-300px
-  / 2) -moz-calc(-187px
-  / 2); background-position: calc(-300px
-  / 2) calc(-187px
-  / 2); }
-  @mixin icon-pg-last{ width:14px; height:13px; background-position:-319px
-  -187px; } .icon-pg-last
-  { @include icon-pg-last; } @mixin icon--retina-pg-last{ width:-webkit-calc(14px
   / 2); width:-moz-calc(14px
   / 2); width:calc(14px
   / 2); height:-webkit-calc(13px
@@ -622,6 +577,51 @@
   / 2) -moz-calc(-187px
   / 2); background-position: calc(-319px
   / 2) calc(-187px
+  / 2); }
+  @mixin icon-pg-first{ width:14px; height:13px; background-position:-87px
+  -218px; } .icon-pg-first
+  { @include icon-pg-first; } @mixin icon--retina-pg-first{ width:-webkit-calc(14px
+  / 2); width:-moz-calc(14px
+  / 2); width:calc(14px
+  / 2); height:-webkit-calc(13px
+  / 2); height:-moz-calc(13px
+  / 2); height:calc(13px
+  / 2); background-position: -webkit-calc(-87px
+  / 2) -webkit-calc(-218px
+  / 2); background-position: -moz-calc(-87px
+  / 2) -moz-calc(-218px
+  / 2); background-position: calc(-87px
+  / 2) calc(-218px
+  / 2); }
+  @mixin icon-pg-last-gr{ width:14px; height:13px; background-position:-106px
+  -218px; } .icon-pg-last-gr
+  { @include icon-pg-last-gr; } @mixin icon--retina-pg-last-gr{ width:-webkit-calc(14px
+  / 2); width:-moz-calc(14px
+  / 2); width:calc(14px
+  / 2); height:-webkit-calc(13px
+  / 2); height:-moz-calc(13px
+  / 2); height:calc(13px
+  / 2); background-position: -webkit-calc(-106px
+  / 2) -webkit-calc(-218px
+  / 2); background-position: -moz-calc(-106px
+  / 2) -moz-calc(-218px
+  / 2); background-position: calc(-106px
+  / 2) calc(-218px
+  / 2); }
+  @mixin icon-pg-last{ width:14px; height:13px; background-position:-125px
+  -218px; } .icon-pg-last
+  { @include icon-pg-last; } @mixin icon--retina-pg-last{ width:-webkit-calc(14px
+  / 2); width:-moz-calc(14px
+  / 2); width:calc(14px
+  / 2); height:-webkit-calc(13px
+  / 2); height:-moz-calc(13px
+  / 2); height:calc(13px
+  / 2); background-position: -webkit-calc(-125px
+  / 2) -webkit-calc(-218px
+  / 2); background-position: -moz-calc(-125px
+  / 2) -moz-calc(-218px
+  / 2); background-position: calc(-125px
+  / 2) calc(-218px
   / 2); }
   @mixin icon-pg-next-gr-2x{ width:16px; height:26px; background-position:-489px
   -258px; } .icon-pg-next-gr-2x
@@ -983,7 +983,7 @@
   / 2); background-position: calc(-313px
   / 2) calc(-112px
   / 2); }
-  @mixin icon-signUp{ width:15px; height:16px; background-position:-287px
+  @mixin icon-signUp{ width:15px; height:16px; background-position:-324px
   -150px; } .icon-signUp
   { @include icon-signUp; } @mixin icon--retina-signUp{ width:-webkit-calc(15px
   / 2); width:-moz-calc(15px
@@ -991,11 +991,11 @@
   / 2); height:-webkit-calc(16px
   / 2); height:-moz-calc(16px
   / 2); height:calc(16px
-  / 2); background-position: -webkit-calc(-287px
+  / 2); background-position: -webkit-calc(-324px
   / 2) -webkit-calc(-150px
-  / 2); background-position: -moz-calc(-287px
+  / 2); background-position: -moz-calc(-324px
   / 2) -moz-calc(-150px
-  / 2); background-position: calc(-287px
+  / 2); background-position: calc(-324px
   / 2) calc(-150px
   / 2); }
   @mixin icon-top-2x{ width:70px; height:72px; background-position:-149px
@@ -1073,24 +1073,9 @@
   / 2); background-position: calc(-345px
   / 2) calc(-292px
   / 2); }
-  @mixin icon-view-next{ width:16px; height:9px; background-position:-287px
-  -171px; } .icon-view-next
-  { @include icon-view-next; } @mixin icon--retina-view-next{ width:-webkit-calc(16px
-  / 2); width:-moz-calc(16px
-  / 2); width:calc(16px
-  / 2); height:-webkit-calc(9px
-  / 2); height:-moz-calc(9px
-  / 2); height:calc(9px
-  / 2); background-position: -webkit-calc(-287px
-  / 2) -webkit-calc(-171px
-  / 2); background-position: -moz-calc(-287px
-  / 2) -moz-calc(-171px
-  / 2); background-position: calc(-287px
-  / 2) calc(-171px
-  / 2); }
-  @mixin icon-view-prev-2x{ width:32px; height:18px; background-position:-276px
-  -112px; } .icon-view-prev-2x
-  { @include icon-view-prev-2x; } @mixin icon--retina-view-prev-2x{ width:-webkit-calc(32px
+  @mixin icon-view-next-gr-2x{ width:32px; height:18px; background-position:-276px
+  -112px; } .icon-view-next-gr-2x
+  { @include icon-view-next-gr-2x; } @mixin icon--retina-view-next-gr-2x{ width:-webkit-calc(32px
   / 2); width:-moz-calc(32px
   / 2); width:calc(32px
   / 2); height:-webkit-calc(18px
@@ -1103,18 +1088,93 @@
   / 2); background-position: calc(-276px
   / 2) calc(-112px
   / 2); }
-  @mixin icon-view-prev{ width:16px; height:9px; background-position:-308px
-  -171px; } .icon-view-prev
-  { @include icon-view-prev; } @mixin icon--retina-view-prev{ width:-webkit-calc(16px
+  @mixin icon-view-next-gr{ width:16px; height:9px; background-position:-287px
+  -173px; } .icon-view-next-gr
+  { @include icon-view-next-gr; } @mixin icon--retina-view-next-gr{ width:-webkit-calc(16px
+  / 2); width:-moz-calc(16px
+  / 2); width:calc(16px
+  / 2); height:-webkit-calc(9px
+  / 2); height:-moz-calc(9px
+  / 2); height:calc(9px
+  / 2); background-position: -webkit-calc(-287px
+  / 2) -webkit-calc(-173px
+  / 2); background-position: -moz-calc(-287px
+  / 2) -moz-calc(-173px
+  / 2); background-position: calc(-287px
+  / 2) calc(-173px
+  / 2); }
+  @mixin icon-view-next{ width:16px; height:9px; background-position:-308px
+  -173px; } .icon-view-next
+  { @include icon-view-next; } @mixin icon--retina-view-next{ width:-webkit-calc(16px
   / 2); width:-moz-calc(16px
   / 2); width:calc(16px
   / 2); height:-webkit-calc(9px
   / 2); height:-moz-calc(9px
   / 2); height:calc(9px
   / 2); background-position: -webkit-calc(-308px
-  / 2) -webkit-calc(-171px
+  / 2) -webkit-calc(-173px
   / 2); background-position: -moz-calc(-308px
-  / 2) -moz-calc(-171px
+  / 2) -moz-calc(-173px
   / 2); background-position: calc(-308px
-  / 2) calc(-171px
+  / 2) calc(-173px
+  / 2); }
+  @mixin icon-view-prev-2x{ width:32px; height:18px; background-position:-287px
+  -150px; } .icon-view-prev-2x
+  { @include icon-view-prev-2x; } @mixin icon--retina-view-prev-2x{ width:-webkit-calc(32px
+  / 2); width:-moz-calc(32px
+  / 2); width:calc(32px
+  / 2); height:-webkit-calc(18px
+  / 2); height:-moz-calc(18px
+  / 2); height:calc(18px
+  / 2); background-position: -webkit-calc(-287px
+  / 2) -webkit-calc(-150px
+  / 2); background-position: -moz-calc(-287px
+  / 2) -moz-calc(-150px
+  / 2); background-position: calc(-287px
+  / 2) calc(-150px
+  / 2); }
+  @mixin icon-view-prev-gr-2x{ width:32px; height:18px; background-position:-262px
+  -187px; } .icon-view-prev-gr-2x
+  { @include icon-view-prev-gr-2x; } @mixin icon--retina-view-prev-gr-2x{ width:-webkit-calc(32px
+  / 2); width:-moz-calc(32px
+  / 2); width:calc(32px
+  / 2); height:-webkit-calc(18px
+  / 2); height:-moz-calc(18px
+  / 2); height:calc(18px
+  / 2); background-position: -webkit-calc(-262px
+  / 2) -webkit-calc(-187px
+  / 2); background-position: -moz-calc(-262px
+  / 2) -moz-calc(-187px
+  / 2); background-position: calc(-262px
+  / 2) calc(-187px
+  / 2); }
+  @mixin icon-view-prev-gr{ width:16px; height:9px; background-position:-144px
+  -218px; } .icon-view-prev-gr
+  { @include icon-view-prev-gr; } @mixin icon--retina-view-prev-gr{ width:-webkit-calc(16px
+  / 2); width:-moz-calc(16px
+  / 2); width:calc(16px
+  / 2); height:-webkit-calc(9px
+  / 2); height:-moz-calc(9px
+  / 2); height:calc(9px
+  / 2); background-position: -webkit-calc(-144px
+  / 2) -webkit-calc(-218px
+  / 2); background-position: -moz-calc(-144px
+  / 2) -moz-calc(-218px
+  / 2); background-position: calc(-144px
+  / 2) calc(-218px
+  / 2); }
+  @mixin icon-view-prev{ width:16px; height:9px; background-position:-165px
+  -218px; } .icon-view-prev
+  { @include icon-view-prev; } @mixin icon--retina-view-prev{ width:-webkit-calc(16px
+  / 2); width:-moz-calc(16px
+  / 2); width:calc(16px
+  / 2); height:-webkit-calc(9px
+  / 2); height:-moz-calc(9px
+  / 2); height:calc(9px
+  / 2); background-position: -webkit-calc(-165px
+  / 2) -webkit-calc(-218px
+  / 2); background-position: -moz-calc(-165px
+  / 2) -moz-calc(-218px
+  / 2); background-position: calc(-165px
+  / 2) calc(-218px
   / 2); }

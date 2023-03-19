@@ -221,6 +221,9 @@ textarea {
   &.navy {
     color: $navy !important;
   }
+  &.navy2 {
+    color: $navy2 !important;
+  }
 }
 .clear {
   &::after {
@@ -334,6 +337,11 @@ textarea {
     position: absolute;
     right: 0;
     bottom: 0;
+    height: 45px;
+
+    @include _bp(821px) {
+      height: 35px;
+    }
 
     em {
       padding-left: 28px;
@@ -988,6 +996,18 @@ main {
     }
   }
 
+  &.col-3 {
+    grid-template-columns: repeat(3, 1fr);
+
+    @include _bp(821px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include _bp(561px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
   &.col-2 {
     grid-template-columns: repeat(2, 1fr);
 
@@ -1013,7 +1033,9 @@ main {
   left: -12px;
   padding-bottom: 100px;
   margin-top: 40px;
+}
 
+.list-swiper {
   .swiper-wrapper {
     z-index: 100;
   }
@@ -1376,6 +1398,19 @@ main {
   }
 }
 
+.list-swiper2 {
+  left: 0;
+  padding-bottom: 45px;
+  margin-top: 25px;
+
+  .swiper-wrapper {
+    &,
+    & * {
+      @include transition-duration(0s);
+    }
+  }
+}
+
 /*tooltip*/
 .tooltip-wrap {
   position: relative;
@@ -1578,6 +1613,15 @@ main {
   -ms-touch-action: none;
   background: $blueGray;
   overflow: hidden;
+
+  &.type02 {
+    left: 0;
+    width: 100%;
+
+    .swiper-scrollbar-drag {
+      background-color: $skyblue;
+    }
+  }
 
   @include _bp(821px) {
     width: 100%;

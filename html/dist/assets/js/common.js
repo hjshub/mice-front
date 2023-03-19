@@ -14,6 +14,7 @@ const gb = (function () {
     main: $('.main'),
     header: $('#gnb'),
     listSwiper: $('.list-swiper').get(),
+    listSwiper2: $('.list-swiper2').get(),
     btnActiveModal: $('.button-active-modal'),
     btnActiveTooltip: $('.button-active-tooltip'),
     isMob: window.innerWidth <= 821 ? true : false,
@@ -26,6 +27,7 @@ window.addEventListener('load', () => {
 
   if (gb.main.length) gb.CommonFunction.zoomIn();
   if (gb.listSwiper.length) gb.CommonFunction.listSwiper();
+  if (gb.listSwiper2.length) gb.CommonFunction.listSwiper2();
 });
 
 gb.CommonFunction = (function () {
@@ -156,6 +158,7 @@ gb.CommonFunction = (function () {
     if (gb.main.length) {
       gsap.to(gb.main, { y: 0, duration: 0.5, delay: 0.3 });
     }
+
     gsap.to(gb.header, { y: 0, opacity: 1, duration: 0.5, delay: 0.4 });
 
     if (document.documentElement.scrollTop >= 40) {
@@ -198,9 +201,12 @@ gb.CommonFunction = (function () {
 
     $('.depth1')
       .find('> li > a')
-      .on('click', function () {
+      .on('click', function (e) {
         const trg_ = $(this);
         if (trg_.next('.depth2').length) {
+          e.preventDefault();
+          e.stopPropagation();
+
           if (trg_.closest('li').hasClass('on')) {
             trg_.closest('li').removeClass('on');
             trg_.next('.depth2').stop().slideUp(300);
@@ -268,7 +274,7 @@ gb.CommonFunction = (function () {
     });
   };
   const listSwiper = () => {
-    // 공통 스와이퍼
+    // 메인 공통 스와이퍼
     gb._listSwiper = gb._listSwiper || [];
 
     gb.listSwiper.forEach(function (elem, i) {
@@ -303,6 +309,53 @@ gb.CommonFunction = (function () {
       };
 
       gb._listSwiper[i] = new Swiper(elem, gb.listSwiperOption);
+    });
+  };
+  const listSwiper2 = () => {
+    // 인재정보 스와이퍼
+    gb._listSwiper2 = gb._listSwiper2 || [];
+
+    gb.listSwiper2.forEach(function (elem, i) {
+      if (typeof gb._listSwiper2[i] !== 'undefined') {
+        gb._listSwiper2[i].destroy();
+        gb._listSwiper2[i] = undefined;
+      }
+
+      gb.listSwiper2Option = {
+        // Optional parameters
+        loop: false,
+        speed: 600,
+        direction: 'horizontal',
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        slidesPerColumn: 1,
+        spaceBetween: 0,
+        breakpoints: {
+          821: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            slidesPerColumn: 2,
+          },
+        },
+        centeredSlides: false,
+        debugger: true, // Enable debugger
+        // resistance: false,
+        // allowTouchMove: true,
+        // observer: true,
+        // observeParents: true,
+        // SimulateTouch: false,
+        scrollbar: {
+          el: '.swiper-scrollbar-customed',
+          hide: false,
+          draggable: true,
+        },
+        navigation: {
+          nextEl: '.button-swiper-nxt',
+          prevEl: '.button-swiper-prev',
+        },
+      };
+
+      gb._listSwiper2[i] = new Swiper(elem, gb.listSwiper2Option);
     });
   };
   const fileUpload = (el, type) => {
@@ -459,6 +512,7 @@ gb.CommonFunction = (function () {
     zoomIn,
     //modalOff,
     listSwiper,
+    listSwiper2,
     //goScrollTop,
     fileUpload,
     copyUrl,
@@ -475,6 +529,7 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('resize', () => {
   if (gb.listSwiper.length) gb.CommonFunction.listSwiper();
+  if (gb.listSwiper2.length) gb.CommonFunction.listSwiper2();
 });
 
 // 쿠키설정

@@ -130,6 +130,12 @@
   }
 }
 
+@mixin _min_bp($val) {
+  @media only screen and (min-width: $val) {
+    @content;
+  }
+}
+
 @mixin _bp_landscape($val) {
   @media only screen and (orientation: landscape) and (max-width: $val) {
     @content;

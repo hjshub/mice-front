@@ -157,14 +157,15 @@
       overflow: hidden;
       overflow-y: auto;
       background-color: $navy;
-      @include transition(all ease-out 0.2s);
+      @include transition(all ease-out 0.3s);
       border-top: 2px solid rgba(57, 62, 89, 0.5);
+      box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.5);
       color: $white;
       padding: 60px 0;
 
       @include _bp(821px) {
         padding: 40px 0;
-        top: 54px;
+        top: 50px;
         max-height: -webkit-calc(90vh - 54px);
         max-height: -moz-calc(90vh - 54px);
         max-height: calc(90vh - 54px);
