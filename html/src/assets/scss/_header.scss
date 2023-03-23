@@ -353,6 +353,11 @@
                 margin-top: -6.5px;
               }
             }
+
+            &::before {
+              display: none;
+              content: none;
+            }
           }
 
           .depth2 {
@@ -405,6 +410,28 @@
           font-size: 1.8rem;
           line-height: 1;
           letter-spacing: 1px;
+          position: relative;
+
+          &:hover,
+          &:focus,
+          &.on {
+            &::before {
+              right: 0;
+              background-color: currentColor;
+              box-shadow: 0 0 3px 1px rgba(35, 192, 255, 0.2);
+            }
+          }
+
+          &::before {
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: -5px;
+            height: 2px;
+            background-color: transparent;
+            @include transition(all 0.2s ease-out);
+            content: '';
+          }
 
           * {
             vertical-align: top;
@@ -469,12 +496,6 @@
               color: $white;
               font-size: 1.5rem;
               letter-spacing: -0.7px;
-
-              &:hover,
-              &:focus {
-                text-decoration-line: underline;
-                text-underline-offset: 5px;
-              }
             }
           }
         }

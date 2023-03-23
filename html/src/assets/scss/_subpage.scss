@@ -765,8 +765,7 @@
         top: 0;
         right: 0;
         width: 310px;
-        max-height: 100%;
-        padding: 0 20px;
+        height: 100%;
         border-left: 1px solid #e4e4e4;
 
         @include _bp(1024px) {
@@ -774,11 +773,64 @@
         }
 
         @include _bp(821px) {
+          position: fixed;
+          top: 50px;
+          right: -265px;
+          background-color: $white;
+          border-top: 1px solid #e4e4e4;
+          z-index: 10;
+          box-shadow: -2px 0 5px 2px rgba(79, 82, 98, 0.1);
+          overflow: visible;
+          overflow-y: visible;
+          @include transition(none);
+        }
+
+        .button-open-sideMenu {
           display: none;
+          width: 40px;
+          height: 60px;
+          font-size: 0;
+          position: absolute;
+          top: 40%;
+          left: -40px;
+          background-color: $white;
+          border-width: 1px 0 1px 1px;
+          border-style: solid;
+          border-color: #e4e4e4;
+          border-radius: 5px 0 0 5px;
+          @include transform(translateY(-50%));
+          box-shadow: -2px 0 3px 0 rgba(79, 82, 98, 0.1);
+
+          @include _bp(821px) {
+            display: block;
+          }
+
+          &::before {
+            @include icon--retina;
+            @include icon--retina-side-menu--off;
+            content: '';
+          }
+
+          &.on {
+            &::before {
+              @include icon--retina;
+              @include icon--retina-side-menu--on;
+              content: '';
+            }
+          }
         }
 
         article {
           margin-top: 0;
+          max-height: 100%;
+          padding: 0 20px;
+
+          @include _bp(821px) {
+            &::-webkit-scrollbar {
+              display: none;
+            }
+            padding: 20px;
+          }
 
           h3 {
             font-size: 2rem;

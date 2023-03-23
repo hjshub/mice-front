@@ -37,6 +37,7 @@ gb.CommonFunction = (function () {
     gb.btnDialogOff = document.querySelectorAll('.btn-dialog-off');
 
     const zoomInLeftBottom = (t) => {
+      goScrollTop();
       gsap.to(gb.visualWrap, {
         transformOrigin: '0% 100%',
         ease: 'none',
@@ -45,7 +46,7 @@ gb.CommonFunction = (function () {
           t.style.opacity = 0;
           t.style.visibility = 'hidden';
           t.nextElementSibling.style.opacity = 1;
-          t.nextElementSibling.style.visibility = 'visible';
+          t.nextElementSibling.style.pointerEvents = 'auto';
           $('.dialog').not($(t)).closest('div').addClass('blur');
         },
       });
@@ -54,6 +55,7 @@ gb.CommonFunction = (function () {
     };
 
     const zoomInCenterTop = (t) => {
+      goScrollTop();
       gsap.to(gb.visualWrap, {
         transformOrigin: '50% 10%',
         ease: 'none',
@@ -62,7 +64,7 @@ gb.CommonFunction = (function () {
           t.style.opacity = 0;
           t.style.visibility = 'hidden';
           t.nextElementSibling.style.opacity = 1;
-          t.nextElementSibling.style.visibility = 'visible';
+          t.nextElementSibling.style.pointerEvents = 'auto';
           $('.dialog').not($(t)).closest('div').addClass('blur');
         },
       });
@@ -71,6 +73,7 @@ gb.CommonFunction = (function () {
     };
 
     const zoomInRightBottom = (t) => {
+      goScrollTop();
       gsap.to(gb.visualWrap, {
         transformOrigin: '100% 80%',
         ease: 'none',
@@ -79,7 +82,7 @@ gb.CommonFunction = (function () {
           t.style.opacity = 0;
           t.style.visibility = 'hidden';
           t.nextElementSibling.style.opacity = 1;
-          t.nextElementSibling.style.visibility = 'visible';
+          t.nextElementSibling.style.pointerEvents = 'auto';
           $('.dialog').not($(t)).closest('div').addClass('blur');
         },
       });
@@ -142,16 +145,16 @@ gb.CommonFunction = (function () {
           el.style.opacity = 1;
           el.style.visibility = 'visible';
           el.nextElementSibling.style.opacity = 0;
-          el.nextElementSibling.style.visibility = 'hidden';
+          el.nextElementSibling.style.pointerEvents = 'none';
           el.parentElement.classList.remove('blur');
         });
         gb.isFocus = false;
       });
     });
 
-    gsap.to('.dialog01', { duration: 0, text: 'MICE...<br/>산업..?', ease: 'none' });
-    gsap.to('.dialog02', { duration: 0, text: '취업준비<br/> 완료!!', ease: 'none' });
-    gsap.to('.dialog03', { duration: 0, text: '새로운<br/> 소식이 떴나?', ease: 'none' });
+    //   gsap.to('.dialog01', { duration: 0, text: 'MICE...<br/>산업..?', ease: 'none' });
+    //   gsap.to('.dialog02', { duration: 0, text: '취업준비<br/> 완료!!', ease: 'none' });
+    //   gsap.to('.dialog03', { duration: 0, text: '새로운<br/> 소식이 떴나?', ease: 'none' });
   };
   const setGnb = () => {
     // 헤더
@@ -404,7 +407,7 @@ gb.CommonFunction = (function () {
     alert('링크가 복사되었습니다.\n ' + location.href);
   };
   const goScrollTop = () => {
-    gb.html.stop().animate({ scrollTop: 0 }, 400);
+    gb.html.stop().animate({ scrollTop: 0 }, 300);
   };
   const toolTip = () => {
     gb.btnActiveTooltip.on('click', function () {
@@ -479,6 +482,36 @@ gb.CommonFunction = (function () {
       }
     });
   };
+  const openSideMenu = () => {
+    $('.button-open-sideMenu').on('click', function () {
+      const trg = $(this);
+      const sideMenu = trg.closest('aside');
+
+      if (trg.hasClass('on')) {
+        sideMenu.stop().animate(
+          {
+            right: '-265px',
+          },
+          300,
+          'easeInOutExpo',
+          function () {
+            trg.removeClass('on');
+          }
+        );
+      } else {
+        sideMenu.stop().animate(
+          {
+            right: 0,
+          },
+          300,
+          'easeInOutExpo',
+          function () {
+            trg.addClass('on');
+          }
+        );
+      }
+    });
+  };
   const vdPlay = () => {
     const buttonVdActive = document.querySelector('.vd-active');
 
@@ -505,6 +538,7 @@ gb.CommonFunction = (function () {
     checkAlll();
     vdPlay();
     dropDown();
+    openSideMenu();
   };
 
   return {
@@ -513,7 +547,7 @@ gb.CommonFunction = (function () {
     //modalOff,
     listSwiper,
     listSwiper2,
-    //goScrollTop,
+    goScrollTop,
     fileUpload,
     copyUrl,
   };
