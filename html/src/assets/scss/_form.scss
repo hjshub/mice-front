@@ -58,6 +58,15 @@ button {
       width: 100%;
     }
 
+    &.lg {
+      min-width: 140px;
+      height: 50px;
+
+      em {
+        font-weight: 600;
+      }
+    }
+
     &.md {
       min-width: 130px;
 
@@ -408,7 +417,7 @@ button {
 
       &:focus + label {
         outline: 1px dashed $navy;
-        outline-offset: -1px;
+        outline-offset: 1px;
       }
 
       &:checked + label:before {
@@ -488,7 +497,7 @@ button {
 
       &:focus + label {
         outline: 1px dashed $navy;
-        outline-offset: -1px;
+        outline-offset: 1px;
       }
 
       &:checked + label:after {
@@ -524,10 +533,12 @@ button {
 
   span {
     display: inline-block;
-    font-size: 0;
     position: relative;
     height: 48px;
+    font-size: 0;
     margin: 5px 10px;
+    border: 1px solid $navy;
+    border-radius: 30px;
 
     @include _bp(821px) {
       height: 38px;
@@ -556,13 +567,12 @@ button {
         text-align: center;
         vertical-align: top;
         line-height: 46px;
-        border-radius: 24px;
         padding: 0 15px;
         color: $navy;
-        border: 2px solid currentColor;
         background-color: $white;
         overflow: hidden;
         position: relative;
+        border-radius: 30px;
 
         @include _bp(821px) {
           min-width: auto;
@@ -591,13 +601,12 @@ button {
 
       &:focus + label {
         outline: 1px dashed $navy;
-        outline-offset: -1px;
+        outline-offset: 1px;
         box-shadow: 0px 0px 6px 2px rgba(35, 192, 255, 0.4);
       }
 
       &:checked + label {
         color: $white;
-        border-color: $navy;
         background-color: $navy;
       }
     }
