@@ -696,7 +696,9 @@
                 z-index: 1;
 
                 &.up {
-                  top: 54px;
+                  top: -webkit-calc(100% + 20px);
+                  top: -moz-calc(100% + 20px);
+                  top: calc(100% + 20px);
 
                   &::before {
                     position: absolute;
@@ -712,7 +714,9 @@
                 }
 
                 &.down {
-                  bottom: 54px;
+                  bottom: -webkit-calc(100% + 20px);
+                  bottom: -moz-calc(100% + 20px);
+                  bottom: calc(100% + 20px);
 
                   &::before {
                     position: absolute;
@@ -908,6 +912,10 @@
     .list {
       margin-top: 30px;
 
+      // .grid-item {
+      //   overflow-x: hidden;
+      // }
+
       a:hover,
       a:focus {
         .bx-img {
@@ -974,39 +982,73 @@
 
           dt {
             font-weight: 700;
-
-            &.play {
-              margin-left: 20px;
-
-              &::before {
-                @include icon;
-                @include icon-play-sm;
-                content: '';
-
-                @include _bp(821px) {
-                  @include icon--retina;
-                  @include icon--retina-play-sm-2x;
-                }
-              }
-            }
-            &.like {
-              margin-left: 10px;
-
-              &::before {
-                @include icon;
-                @include icon-like-sm;
-                content: '';
-
-                @include _bp(821px) {
-                  @include icon--retina;
-                  @include icon--retina-like-sm-2x;
-                }
-              }
-            }
+            margin-right: 5px;
           }
 
           dd {
-            margin-left: 5px;
+            // margin-left: 5px;
+            // @include ellipsis;
+            &.on {
+              .tooltip {
+                pointer-events: auto;
+              }
+            }
+          }
+        }
+
+        .tooltip {
+          width: 220px;
+          left: 50%;
+          margin-left: -110px;
+          padding: 0;
+          background-color: transparent;
+          border-radius: 0;
+          pointer-events: none;
+          box-shadow: none;
+
+          span {
+            display: inline-block;
+            width: 100%;
+            padding: 25px;
+            color: $white;
+            font-size: 1.6rem;
+            background-color: #070e30;
+            border-radius: 15px;
+            box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.5);
+          }
+
+          &.up {
+            top: 15px;
+            padding-top: 20px;
+
+            &::before {
+              position: absolute;
+              left: 50%;
+              top: 0;
+              margin-left: -11px;
+              border-width: 11px;
+              border-style: solid;
+              border-color: transparent;
+              border-bottom-color: $navy;
+              content: '';
+            }
+          }
+
+          &.down {
+            bottom: 100%;
+            padding-bottom: 20px;
+
+            &::before {
+              position: absolute;
+              left: 50%;
+              bottom: 0;
+              margin-left: -11px;
+              border-width: 11px;
+              border-style: solid;
+              border-color: transparent;
+              border-top-color: $navy;
+              content: '';
+            }
           }
         }
       }
@@ -1449,12 +1491,40 @@
 }
 
 .hashTag {
+  max-height: 58px;
+  overflow: hidden;
+
+  @include _bp(821px) {
+    max-height: 48px;
+  }
+
+  @include _bp(561px) {
+    max-height: 38px;
+  }
+
   & + .btn-wrap {
     margin-top: 40px;
 
+    @include _bp(561px) {
+      margin-top: 20px;
+    }
+
     .btn-more {
+      width: -webkit-calc(100% - 140px) !important;
+      width: -moz-calc(100% - 140px) !important;
+      width: calc(100% - 140px) !important;
       color: $navy;
       height: 45px;
+
+      @include _bp(821px) {
+        width: -webkit-calc(100% - 100px) !important;
+        width: -moz-calc(100% - 100px) !important;
+        width: calc(100% - 100px) !important;
+      }
+
+      &:active:enabled {
+        @include transform(scale(1));
+      }
 
       em {
         font-weight: 600;
@@ -1465,6 +1535,7 @@
           position: absolute;
           background-color: currentColor;
           top: 50%;
+          @include transition(transform 0.3s ease-out);
           content: '';
         }
 
@@ -1481,6 +1552,23 @@
           left: 5px;
           margin-top: -6px;
         }
+      }
+    }
+
+    .btn-reset {
+      height: 45px;
+    }
+  }
+}
+
+.fold {
+  .hashTag {
+    max-height: none;
+  }
+  .btn-more {
+    em {
+      &::after {
+        @include transform(rotate(90deg));
       }
     }
   }

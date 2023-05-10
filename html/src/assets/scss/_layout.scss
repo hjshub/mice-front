@@ -1462,6 +1462,7 @@ main {
     border-radius: 15px;
     pointer-events: none;
     box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.5);
+    z-index: 10;
 
     &.right {
       top: 50%;

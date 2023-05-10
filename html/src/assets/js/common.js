@@ -17,6 +17,7 @@ const gb = (function () {
     listSwiper2: $('.list-swiper2').get(),
     btnActiveModal: $('.button-active-modal'),
     btnActiveTooltip: $('.button-active-tooltip'),
+    btnHoverTooltip: $('.button-hover-tooltip'),
     isMob: window.innerWidth <= 821 ? true : false,
     isFocus: false,
   };
@@ -409,34 +410,78 @@ gb.CommonFunction = (function () {
   const goScrollTop = () => {
     gb.html.stop().animate({ scrollTop: 0 }, 300);
   };
+  const toolTipSet = (trg) => {
+    return {
+      _clientY: $(trg).offset().top - document.documentElement.scrollTop,
+      clientY: document.documentElement.scrollTop + document.documentElement.clientHeight - $(trg).offset().top,
+    };
+  };
   const toolTip = () => {
     gb.btnActiveTooltip.on('click', function () {
-      const trg = $(this);
-      const trgOffsetTop = trg.offset().top;
-      const currentScrollTop = document.documentElement.scrollTop;
-      const clientHeight = document.documentElement.clientHeight;
-      const scrollHeight = currentScrollTop + clientHeight;
-      const _clientY = trgOffsetTop - currentScrollTop;
-      const clientY = scrollHeight - trgOffsetTop;
+      const _toolTipSet = toolTipSet(this);
+      const _trg = $(this);
 
-      if (trg.hasClass('on')) {
-        trg.removeClass('on');
-        trg.next('.tooltip').removeClass('animation--start');
+      if (_trg.hasClass('on')) {
+        _trg.removeClass('on');
+        _trg.next('.tooltip').removeClass('animation--start');
       } else {
-        if (_clientY >= clientY) {
-          trg.next('.tooltip:not(.right)').removeClass('up').addClass('down');
+        if (_toolTipSet._clientY >= _toolTipSet.clientY) {
+          _trg.next('.tooltip:not(.right)').removeClass('up').addClass('down');
         } else {
-          trg.next('.tooltip:not(.right)').removeClass('down').addClass('up');
+          _trg.next('.tooltip:not(.right)').removeClass('down').addClass('up');
         }
 
-        trg.addClass('on');
-        trg.next('.tooltip').addClass('animation--start');
+        _trg.addClass('on');
+        _trg.next('.tooltip').addClass('animation--start');
       }
     });
 
     $('.button-close-tooltip').on('click', function () {
       $(this).closest('.tooltip').removeClass('animation--start');
       $(this).closest('.tooltip').prev('button').removeClass('on');
+    });
+
+    gb.btnHoverTooltip.on('mouseenter', function () {
+      const _toolTipSet = toolTipSet(this);
+      const _trg = $(this);
+
+      if (_toolTipSet._clientY >= _toolTipSet.clientY) {
+        _trg.find('.tooltip:not(.right)').removeClass('up').addClass('down');
+      } else {
+        _trg.find('.tooltip:not(.right)').removeClass('down').addClass('up');
+      }
+
+      _trg.addClass('on');
+      _trg.find('.tooltip').addClass('animation--start');
+      gb.body.css('user-select', 'auto');
+    });
+
+    gb.btnHoverTooltip.on('mouseleave', function () {
+      const _trg = $(this);
+      _trg.removeClass('on');
+      _trg.find('.tooltip').removeClass('animation--start');
+      gb.body.css('user-select', 'none');
+    });
+
+    gb.btnHoverTooltip.on('touchstart', function () {
+      const _toolTipSet = toolTipSet(this);
+      const _trg = $(this);
+
+      $('.tooltip').removeClass('animation--start');
+
+      if (_trg.hasClass('on')) {
+        _trg.removeClass('on');
+        _trg.find('.tooltip').removeClass('animation--start');
+      } else {
+        if (_toolTipSet._clientY >= _toolTipSet.clientY) {
+          _trg.find('.tooltip:not(.right)').removeClass('up').addClass('down');
+        } else {
+          _trg.find('.tooltip:not(.right)').removeClass('down').addClass('up');
+        }
+
+        _trg.addClass('on');
+        _trg.find('.tooltip').addClass('animation--start');
+      }
     });
   };
   const dropDown = () => {
@@ -531,9 +576,24 @@ gb.CommonFunction = (function () {
       });
     }
   };
+  const viewMore = (t) => {
+    const hd = $(t).closest('header');
+    if (hd.hasClass('fold')) {
+      hd.removeClass('fold');
+      $(t).find('em').text('더보기');
+    } else {
+      hd.addClass('fold');
+      $(t).find('em').text('접기');
+    }
+  };
+  const filterReset = () => {
+    const checkItem_ = $('input[type=checkbox][name^=chk_]');
+
+    checkItem_.prop('checked', '');
+  };
   const init = () => {
     setGnb();
-    modal();
+    //modal();
     toolTip();
     checkAlll();
     vdPlay();
@@ -550,6 +610,8 @@ gb.CommonFunction = (function () {
     goScrollTop,
     fileUpload,
     copyUrl,
+    viewMore,
+    filterReset,
   };
 })();
 

@@ -25,10 +25,10 @@
   @include transform(none);
 }
 .fadeInUp {
-  @include transform(translate3d(0, 50%, 0));
+  @include transform(translate3d(0, 30%, 0));
 }
 .fadeInDown {
-  @include transform(translate3d(0, -50%, 0));
+  @include transform(translate3d(0, -30%, 0));
 }
 .fadeInRight {
   @include transform(translate3d(-10%, 0, 0));
