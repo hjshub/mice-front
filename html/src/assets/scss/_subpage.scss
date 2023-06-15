@@ -87,7 +87,8 @@
       }
     }
 
-    a {
+    a,
+    em {
       display: inline-block;
       line-height: 1;
       font-size: 1.6rem;
@@ -173,6 +174,25 @@
 }
 
 .notice {
+  .subTop {
+    > div {
+      &::before {
+        width: 204px;
+        height: 199px;
+        margin-top: -10px;
+        background-image: url('../images/sub-top-icon01.png');
+
+        @include _bp(561px) {
+          width: 143px;
+          height: 140px;
+          right: -15px;
+        }
+      }
+    }
+  }
+}
+
+.bidding {
   .subTop {
     > div {
       &::before {
@@ -903,31 +923,22 @@
   }
 
   article {
-    margin-top: 60px;
-
-    @include _bp(821px) {
-      margin-top: 40px;
-    }
-
     .list {
-      margin-top: 30px;
-
       // .grid-item {
       //   overflow-x: hidden;
       // }
-
-      a:hover,
-      a:focus {
-        .bx-img {
-          box-shadow: 0px 0px 7px 2px rgba(35, 192, 255, 0.6);
-        }
-      }
 
       .bx-img {
         position: relative;
         overflow: hidden;
         background-color: #ced9ef;
         height: 165px;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+          box-shadow: 0px 0px 7px 2px rgba(35, 192, 255, 0.6);
+        }
 
         img {
           max-width: 60%;
@@ -1334,7 +1345,7 @@
 
     &.list {
       .breadCrumb {
-        margin-bottom: 0;
+        margin-bottom: 50px;
       }
 
       &.info {
@@ -1342,7 +1353,7 @@
           margin: 40px 0 30px;
         }
         .tblStyle {
-          margin-top: 40px;
+          margin-top: 20px;
         }
       }
 
@@ -1359,6 +1370,45 @@
   //     margin-top: 40px;
   //   }
   // }
+}
+
+.job {
+  .subTop {
+    > div {
+      &::before {
+        width: 158px;
+        height: 181px;
+        background-image: url('../images/sub-top-icon04.png');
+
+        @include _bp(561px) {
+          width: 120px;
+          height: 135px;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .contents {
+    &.list {
+      .breadCrumb {
+        margin-bottom: 50px;
+      }
+
+      &.info {
+        .hashTag {
+          margin: 40px 0 30px;
+        }
+        .tblStyle {
+          margin-top: 20px;
+        }
+      }
+
+      .tblStyle {
+        margin-top: 60px;
+      }
+    }
+  }
 }
 
 .tab-menu {
@@ -1384,7 +1434,7 @@
         display: block;
         text-align: center;
         font-size: 2rem;
-        color: $blueGray;
+        color: $navy;
         line-height: 80px;
         position: relative;
 
@@ -1418,7 +1468,7 @@
         &.current {
           &::before {
             right: 0;
-            background-color: currentColor;
+            background-color: $blueGray;
           }
         }
       }
@@ -1490,86 +1540,96 @@
   }
 }
 
+// .hashTag {
+//   max-height: 58px;
+//   overflow: hidden;
+
+//   @include _bp(821px) {
+//     max-height: 48px;
+//   }
+
+//   @include _bp(561px) {
+//     max-height: 38px;
+//   }
+
+//   & + .btn-wrap {
+//     margin-top: 40px;
+
+//     @include _bp(561px) {
+//       margin-top: 20px;
+//     }
+
+//     .btn-more {
+//       width: -webkit-calc(100% - 140px) !important;
+//       width: -moz-calc(100% - 140px) !important;
+//       width: calc(100% - 140px) !important;
+//       color: $navy;
+//       height: 45px;
+
+//       @include _bp(821px) {
+//         width: -webkit-calc(100% - 100px) !important;
+//         width: -moz-calc(100% - 100px) !important;
+//         width: calc(100% - 100px) !important;
+//       }
+
+//       &:active:enabled {
+//         @include transform(scale(1));
+//       }
+
+//       em {
+//         font-weight: 600;
+//         padding-left: 25px;
+
+//         &::before,
+//         &::after {
+//           position: absolute;
+//           background-color: currentColor;
+//           top: 50%;
+//           @include transition(transform 0.3s ease-out);
+//           content: '';
+//         }
+
+//         &::before {
+//           width: 12px;
+//           height: 2px;
+//           left: 0;
+//           margin-top: -1px;
+//         }
+
+//         &::after {
+//           width: 2px;
+//           height: 12px;
+//           left: 5px;
+//           margin-top: -6px;
+//         }
+//       }
+//     }
+
+//     .btn-reset {
+//       height: 45px;
+//     }
+//   }
+// }
+
+// .fold {
+//   .hashTag {
+//     max-height: none;
+//   }
+//   .btn-more {
+//     em {
+//       &::after {
+//         @include transform(rotate(90deg));
+//       }
+//     }
+//   }
+// }
+
 .hashTag {
-  max-height: 58px;
-  overflow: hidden;
+  & + .select-wrap {
+    margin-top: 70px;
 
-  @include _bp(821px) {
-    max-height: 48px;
-  }
-
-  @include _bp(561px) {
-    max-height: 38px;
-  }
-
-  & + .btn-wrap {
-    margin-top: 40px;
-
-    @include _bp(561px) {
-      margin-top: 20px;
-    }
-
-    .btn-more {
-      width: -webkit-calc(100% - 140px) !important;
-      width: -moz-calc(100% - 140px) !important;
-      width: calc(100% - 140px) !important;
-      color: $navy;
-      height: 45px;
-
-      @include _bp(821px) {
-        width: -webkit-calc(100% - 100px) !important;
-        width: -moz-calc(100% - 100px) !important;
-        width: calc(100% - 100px) !important;
-      }
-
-      &:active:enabled {
-        @include transform(scale(1));
-      }
-
-      em {
-        font-weight: 600;
-        padding-left: 25px;
-
-        &::before,
-        &::after {
-          position: absolute;
-          background-color: currentColor;
-          top: 50%;
-          @include transition(transform 0.3s ease-out);
-          content: '';
-        }
-
-        &::before {
-          width: 12px;
-          height: 2px;
-          left: 0;
-          margin-top: -1px;
-        }
-
-        &::after {
-          width: 2px;
-          height: 12px;
-          left: 5px;
-          margin-top: -6px;
-        }
-      }
-    }
-
-    .btn-reset {
-      height: 45px;
-    }
-  }
-}
-
-.fold {
-  .hashTag {
-    max-height: none;
-  }
-  .btn-more {
-    em {
-      &::after {
-        @include transform(rotate(90deg));
-      }
+    @include _bp(821px) {
+      margin-top: 40px;
     }
   }
 }
@@ -1706,14 +1766,13 @@
   .view-- {
     &head {
       float: left;
-      max-width: 345px;
+      width: 345px;
 
       @include _bp(1024px) {
-        max-width: 300px;
+        width: 300px;
       }
 
       @include _bp(821px) {
-        max-width: none;
         width: 100%;
         margin-bottom: 30px;
       }

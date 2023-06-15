@@ -228,6 +228,9 @@ textarea {
   &.navy2 {
     color: $navy2 !important;
   }
+  &.orange {
+    color: $orange !important;
+  }
 }
 .clear {
   &::after {
@@ -242,7 +245,29 @@ textarea {
 
   &::after {
     content: '*';
+    font-weight: 500 !important;
     color: $red;
+  }
+}
+.dot-list {
+  li {
+    &::before {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #505363;
+      content: '';
+    }
+
+    * {
+      margin-left: 10px;
+      font-size: 1.6rem;
+      color: #505363;
+    }
+
+    & + li {
+      margin-top: 7px;
+    }
   }
 }
 .bx-left {
@@ -695,6 +720,8 @@ main {
               padding: 15px 0 15px 45px;
               bottom: 240px;
               right: 30px;
+              -webkit-animation: yoyo 1.4s 0s ease-out infinite;
+              animation: yoyo 1.4s 0s ease-out infinite;
 
               @include _bp(1200px) {
                 bottom: 145px;
@@ -784,6 +811,8 @@ main {
               text-align: center;
               right: 165px;
               top: 10px;
+              -webkit-animation: yoyo 1.4s 1s ease-out infinite;
+              animation: yoyo 1.4s 1s ease-out infinite;
 
               @include _bp(1200px) {
                 right: 105px;
@@ -870,6 +899,8 @@ main {
               text-align: center;
               left: 185px;
               top: -70px;
+              -webkit-animation: yoyo 1.4s 0.5s ease-out infinite;
+              animation: yoyo 1.4s 0.5s ease-out infinite;
 
               @include _bp(1200px) {
                 left: 105px;
@@ -1029,6 +1060,25 @@ main {
   .grid-item {
     max-width: 100%;
     // overflow: hidden;
+  }
+}
+
+/*flex*/
+.flex-wrap {
+  @include display-flex;
+  @include align-items('center');
+
+  &.column {
+    flex-direction: column;
+    -ms-flex-direction: column;
+  }
+
+  &.center {
+    @include justify-content('center');
+  }
+
+  &.edge {
+    @include justify-content('space-between');
   }
 }
 
@@ -1448,9 +1498,9 @@ main {
         }
       }
 
-      & + .tooltip {
-        pointer-events: auto;
-      }
+      // & + .tooltip {
+      //   pointer-events: auto;
+      // }
     }
   }
 
@@ -1460,7 +1510,7 @@ main {
     padding: 10px 20px;
     background-color: $navy;
     border-radius: 15px;
-    pointer-events: none;
+    // pointer-events: none;
     box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.5);
     z-index: 10;
 

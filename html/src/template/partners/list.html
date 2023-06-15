@@ -35,7 +35,8 @@
                     </i>
                   </a>
                 </span>
-                <span><a href="">협력업체</a></span>
+                <span><em>협력업체</em></span>
+                <span><em>목록</em></span>
               </div>
               <div class="bx-right">
                 <form action="">
@@ -99,97 +100,59 @@
                    <input type="checkbox" name="chk_filter_j" id="chk_j" value="">
                    <label for="chk_j"><em>카메라</em></label>
                 </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_k" id="chk_k" value="">
-                  <label for="chk_k"><em>세미나</em></label>
-               </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_l" id="chk_l" value="" checked="">
-                  <label for="chk_l"><em>보안</em></label>
-               </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_m" id="chk_m" value="">
-                  <label for="chk_m"><em>마케팅</em></label>
-               </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_n" id="chk_n" value="" checked="">
-                  <label for="chk_n"><em>통역</em></label>
-               </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_o" id="chk_o" value="">
-                  <label for="chk_o"><em>대관</em></label>
-               </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_p" id="chk_p" value="">
-                  <label for="chk_p"><em>조명</em></label>
-               </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_q" id="chk_q" value="">
-                  <label for="chk_q"><em>식사</em></label>
-               </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_r" id="chk_r" value="">
-                  <label for="chk_r"><em>기념품</em></label>
-               </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_s" id="chk_s" value="">
-                  <label for="chk_s"><em>음향</em></label>
-               </span>
-               <span>
-                  <input type="checkbox" name="chk_filter_t" id="chk_t" value="">
-                  <label for="chk_t"><em>네트워크</em></label>
-               </span>
               </div>
-              <div class="btn-wrap align-c">
-                <button class="btn-more rounded border" type="button" onclick="gb.CommonFunction.viewMore(this);"><em>더보기</em></button>
-                <button class="btn-reset md rounded bg-gray6" type="button" onclick="gb.CommonFunction.filterReset();"><em>초기화</em></button>
+              <div class="select-wrap block">
+                <select name="" id="">
+                  <option value="" disabled selected>기관별 보기</option>
+                  <option value="">test1</option>
+                  <option value="">test2</option>
+                  <option value="">test3</option>
+                </select>
               </div>
             </header>
 
-            <form action="">
-              <article>
-                <header class="hidden-txt">
-                  <h3>협력업체목록</h3>
-                </header>
-                <div class="list">
-                  <ul class="grid-wrap col-4">
-                    @@for(var i = 1; i < 9; i++){
-                    <li class="grid-item">
-                      <div class="bx-img">
-                        <img src="../assets/images/sample/partners-list-thumb-0`+i+`.jpg" alt="협력업체 로고`+i+`" />
-                      </div>
-                      <div class="bx-txt">
-                        <strong>㈜메씨인터내셔날 (MECI)</strong>
-                      </div>
-                      <div class="bx-etc">
-                        <dl class="tooltip-wrap">
-                          <dt>주요업무</dt>
-                          <dd class="button-hover-tooltip">
-                            <div>음향&#47;카메라&#47;네트워크</div>
-                            <div class="tooltip animate fast fadeInUp">
-                              <span>보안&#47;통역&#47;조명&#47;음향&#47;카메라&#47;네트워크&#47;숙소&#47;식사&#47;인쇄&#47;기념품</span>
-                              </div>
-                          </dd>
-                        </dl>
-                        <dl>
-                          <dt>대표이사</dt>
-                          <dd>김분희</dd>
-                        </dl>
-                        <dl>
-                          <dt>전화번호</dt>
-                          <dd>02-6288-6300</dd>
-                        </dl>
-                        <dl>
-                          <dt>홈페이지</dt>
-                          <dd class="txt-color skyblue">www.meci.co.kr</dd>
-                        </dl>
-                      </div>
-                    </li>
-                    }
-                  </ul>
-                </div>
-              </article>
-            </form>
+            <article>
+              <header class="hidden-txt">
+                <h3>협력업체목록</h3>
+              </header>
+              <div class="list">
+                <ul class="grid-wrap col-4">
+                  @@for(var i = 1; i < 9; i++){
+                  <li class="grid-item">
+                    <div class="bx-img button-active-modal" data-modal-name="partnersInfo" tabindex="0">
+                      <img src="../assets/images/sample/partners-list-thumb-0`+i+`.jpg" alt="협력업체 로고`+i+`" />
+                    </div>
+                    <div class="bx-txt">
+                      <strong>㈜메씨인터내셔날 (MECI)</strong>
+                    </div>
+                    <div class="bx-etc">
+                      <dl class="tooltip-wrap">
+                        <dt>주요업무</dt>
+                        <dd class="button-hover-tooltip">
+                          <div>음향&#47;카메라&#47;네트워크</div>
+                          <div class="tooltip animate fast fadeInUp">
+                            <span>보안&#47;통역&#47;조명&#47;음향&#47;카메라&#47;네트워크&#47;숙소&#47;식사&#47;인쇄&#47;기념품</span>
+                            </div>
+                        </dd>
+                      </dl>
+                      <dl>
+                        <dt>대표이사</dt>
+                        <dd>김분희</dd>
+                      </dl>
+                      <dl>
+                        <dt>전화번호</dt>
+                        <dd>02-6288-6300</dd>
+                      </dl>
+                      <dl>
+                        <dt>홈페이지</dt>
+                        <dd class="txt-color skyblue">www.meci.co.kr</dd>
+                      </dl>
+                    </div>
+                  </li>
+                  }
+                </ul>
+              </div>
+            </article>
             
             <div class="paging pc-only">
               <a href="#" class="first disable"><em class="hidden-txt">첫 페이지</em></a>
@@ -216,6 +179,10 @@
       <!-- #footer -->
       <footer id="footer">@@include('../include/footer.html')</footer>
       <!-- // #footer -->
+
+      <!-- 모달 -->
+      <!-- 기업정보 -->
+      @@include('../include/modal-partnersInfo.html')
     </div>
   </body>
 </html>

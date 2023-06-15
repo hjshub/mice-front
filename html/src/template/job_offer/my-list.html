@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko" class="active">
+  <head>
+    @@include('../include/head.html', { page_main: false, page_title:'나의구인정보 | 구인&middot;구직' })
+  </head>
+  <body>
+    @@include('../include/skipNav.html')
+
+    <div id="layout">
+      <!-- #gnb -->
+      <header id="gnb">@@include('../include/gnb.html', { path:'..' })</header>
+      <!-- // #gnb -->
+
+      <!-- #contents -->
+      <main id="contents" class="job">
+        <h1 class="hidden-txt">구인&middot;구직</h1>
+
+        <!-- 상단 배너 -->
+        <section class="subTop">
+          <div class="inner-wrap">
+            <h2>
+              <strong class="txt-scd-b">구인&middot;구직</strong><br />
+              <span class="txt-scd-r">MICE 산업은 여러분이 꼭 필요해요!</span>
+            </h2>
+          </div>
+        </section>
+        <section class="contents list info">
+          <nav class="breadCrumb">
+            <div class="inner-wrap clear">
+              <div class="bx-left pc-only">
+                <span>
+                  <a href="../index.html">
+                    <i class="icon icon-home">
+                      <em class="hidden-txt">홈</em>
+                    </i>
+                  </a>
+                </span>
+                <span><em>구인&middot;구직</em></span>
+                <span><em>구인정보</em></span>
+                <span><em>나의구인정보</em></span>
+              </div>
+              <div class="bx-right">
+                <form action="">
+                  <fieldset>
+                    <legend>검색</legend>
+                    <span>
+                      <input type="text" name="" id="" placeholder="검색어를 입력해주세요." />
+                      <button type="submit" class="button-search">
+                        <em class="hidden-txt">검색</em></i>
+                      </button>
+                    </span>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <div class="tab-menu">
+            <div class="inner-wrap">
+              <ul class="grid-wrap col-2 gap-none">
+                <li class="grid-item"><a href="./list.html" class="current">구인정보</a></li>
+                <li class="grid-item"><a href="../job_seeking/list.html">구직정보</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-wrap">
+            <div class="chk-wrap-type02 hashTag">
+              <span>
+                 <input type="checkbox" name="chk_all" id="chk_all" value="" checked="">
+                 <label for="chk_all"><em>전체</em></label>
+              </span>
+              <span>
+                 <input type="checkbox" name="chk_filter_a" id="chk_a" value="">
+                 <label for="chk_a"><em>기획&middot;운영</em></label>
+              </span>
+              <span>
+                 <input type="checkbox" name="chk_filter_b" id="chk_b" value="">
+                 <label for="chk_b"><em>분류&middot;센터</em></label>
+              </span>
+              <span>
+                 <input type="checkbox" name="chk_filter_c" id="chk_c" value="">
+                 <label for="chk_c"><em>진행요원</em></label>
+              </span>
+              <span>
+                 <input type="checkbox" name="chk_filter_c" id="chk_d" value="">
+                 <label for="chk_d"><em>지역 서포터즈</em></label>
+              </span>
+            </div>
+
+            <div class="sort">
+              <span><a href="javascript:void(0);" class="selected">최신순</a></span>
+              <span><a href="javascript:void(0);">마감일순</a></span>
+            </div>
+
+            <!-- pc -->
+            <div class="tblStyle pc-only">
+              <table>
+                <caption>
+                  나의구인정보 목록(NO, 회사명, 제목, 채용상태, 채용기간으로 구성된 표)
+                </caption>
+                <colgroup>
+                  <col style="width: 6%" />
+                  <col style="width: 15%" />
+                  <col style="width: auto" />
+                  <col style="width: 12%" />
+                  <col style="width: 20%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">NO</th>
+                    <th scope="col">회사명</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">채용상태</th>
+                    <th scope="col">채용기간</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span>4</span>
+                    </td>
+                    <td>
+                      <b class="name txt-color orange">메씨인터내셔날</b>
+                    </td>
+                    <td class="tit">
+                      <b class="txt-color orange"><a href="./detail.html">[대한이식학회] 2022년 하반기 대한이식학회 운영요원 모집공고 운영요원 모집공고</a></b>
+                      <span><em>기획&middot;운영 전문가</em><em>경력:3년이상</em></span>
+                    </td>
+                    <td>
+                      <span class="status hiringNow">채용중</span>
+                    </td>
+                    <td>
+                      <span>2023.06.20 ~ 2023.06.30</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="btn-wrap flex-wrap edge">
+                <button type="button" class="btn-view lg border rounded txt-color blueGray" onclick="location.href='./list.html'"><em>전체구인정보</em></button>
+                <button type="button" class="btn-view lg border rounded bg-blueGray" onclick="location.href=''"><em>글쓰기</em></button>
+              </div>
+            </div>
+
+            <!-- mobile -->
+            <div class="tblStyle mob-only">
+              <ul>
+                <li>
+                  <a href="./detail.html">
+                    <div class="status">
+                      <span class="hiringNow">채용중</span>
+                    </div>
+                    <div class="tit">
+                      <b class="txt-color orange">[대한이식학회] 2022년 하반기 대한이식학회 운영요원 모집공고</b><br/>
+                      <span><em>기획&middot;운영 전문가</em><em>경력:3년이상</em></span>
+                    </div>
+                    <dl>
+                      <dt>회사명</dt>
+                      <dd class="txt-color orange">메씨인터내셔날</dd>
+                    </dl>
+                    <dl>
+                      <dt>채용기간</dt>
+                      <dd>2023.06.20 ~ 2023.06.30</dd>
+                    </dl>
+                  </a>
+                </li>
+                
+              </ul>
+              <div class="btn-wrap flex-wrap edge">
+                <button type="button" class="btn-view lg border rounded txt-color blueGray" onclick="location.href='./list.html'"><em>전체구인정보</em></button>
+                <button type="button" class="btn-view lg border rounded bg-blueGray" onclick="location.href=''"><em>글쓰기</em></button>
+              </div>
+            </div>
+            
+            <div class="paging pc-only">
+              <a href="#" class="first disable"><em class="hidden-txt">첫 페이지</em></a>
+              <a href="#" class="prev disable"><em class="hidden-txt">이전 페이지</em></a>
+              <span>1</span>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#" class="next"><em class="hidden-txt">다음 페이지</em></a>
+              <a href="#" class="last"><em class="hidden-txt">마지막 페이지</em></a>
+            </div>
+
+            <div class="btn-wrap align-c mob-only">
+              <button type="button" class="btn-prev"><em>이전</em></button>
+              <span><b>1</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+              <button type="button" class="btn-next"><em>다음</em></button>
+            </div>
+        </div>
+        </section>
+      </main>
+      <!-- // #contents -->
+
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer.html')</footer>
+      <!-- // #footer -->
+    </div>
+  </body>
+</html>

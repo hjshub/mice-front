@@ -50,8 +50,11 @@
       [class^='tableStyle'] table tr:first-of-type td {
         border-top: none;
       }
-      .finish {
-        text-decoration: line-through;
+      .delete * {
+        text-decoration: line-through !important;
+      }
+      .new * {
+        color: blue !important;
       }
     </style>
   </head>
@@ -83,18 +86,18 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="new">
                 <td class="count"></td>
                 <td colspan="3">메인</td>
                 <td><a href="../index.html" target="_blank">index.html</a></td>
-                <td>완료</td>
+                <td>수정</td>
               </tr>
-              <tr>
+              <tr class="new">
                 <td class="count"></td>
                 <td rowspan="2">공지사항</td>
                 <td colspan="2">목록</td>
                 <td><a href="../notice/list.html" target="_blank">notice/list.html</a></td>
-                <td>완료</td>
+                <td>수정</td>
               </tr>
               <tr>
                 <td class="count"></td>
@@ -102,12 +105,12 @@
                 <td><a href="../notice/detail.html" target="_blank">notice/detail.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="new">
                 <td class="count"></td>
-                <td rowspan="2">뉴스기사</td>
+                <td rowspan="2">산업뉴스</td>
                 <td colspan="2">목록</td>
                 <td><a href="../news/list.html" target="_blank">news/list.html</a></td>
-                <td>완료</td>
+                <td>수정</td>
               </tr>
               <tr>
                 <td class="count"></td>
@@ -115,12 +118,25 @@
                 <td><a href="../news/detail.html" target="_blank">news/detail.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="new">
                 <td class="count"></td>
-                <td rowspan="2">영상게시판</td>
+                <td rowspan="2">입찰정보</td>
+                <td colspan="2">목록</td>
+                <td><a href="../bidding/list.html" target="_blank">bidding/list.html</a></td>
+                <td>추가</td>
+              </tr>
+              <tr class="new">
+                <td class="count"></td>
+                <td colspan="2">상세</td>
+                <td><a href="../bidding/detail.html" target="_blank">bidding/detail.html</a></td>
+                <td>추가</td>
+              </tr>
+              <tr class="new">
+                <td class="count"></td>
+                <td rowspan="2">온라인교육</td>
                 <td colspan="2">목록</td>
                 <td><a href="../video/list.html" target="_blank">video/list.html</a></td>
-                <td>완료</td>
+                <td>수정</td>
               </tr>
               <tr>
                 <td class="count"></td>
@@ -128,7 +144,7 @@
                 <td><a href="../video/detail.html" target="_blank">video/detail.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td rowspan="10">채용마당</td>
                 <td rowspan="3">TOP인재</td>
@@ -136,26 +152,26 @@
                 <td><a href="../employment/top_list.html" target="_blank">employment/top_list.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td>상세</td>
                 <td><a href="../employment/top_detail.html" target="_blank">employment/top_detail.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td>신청</td>
                 <td><a href="../employment/top_apply.html" target="_blank">employment/top_apply.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td rowspan="3">인재신청</td>
                 <td>목록</td>
                 <td><a href="../employment/micePro_apply_list.html" target="_blank">employment/micePro_apply_list.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td>상세</td>
                 <td>
@@ -163,43 +179,88 @@
                 </td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td>신청</td>
                 <td><a href="../employment/micePro_apply.html" target="_blank">employment/micePro_apply.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td rowspan="2">인재정보</td>
                 <td>목록</td>
                 <td><a href="../employment/micePro_list.html" target="_blank">employment/micePro_list.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td>상세</td>
                 <td><a href="../employment/micePro_detail.html" target="_blank">employment/micePro_detail.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td rowspan="2">채용정보</td>
                 <td>목록</td>
                 <td><a href="../employment/list.html" target="_blank">employment/list.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="delete">
                 <td class="count"></td>
                 <td>상세</td>
                 <td><a href="../employment/detail.html" target="_blank">employment/detail.html</a></td>
                 <td>완료</td>
               </tr>
-              <tr>
+              <tr class="new">
+                <td class="count"></td>
+                <td rowspan="7">구인&middot;구직</td>
+                <td rowspan="4">구인정보</td>
+                <td>목록</td>
+                <td><a href="../job_offer/list.html" target="_blank">job_offer/list.html</a></td>
+                <td>추가</td>
+              </tr>
+              <tr class="new">
+                <td class="count"></td>
+                <td>나의구인정보</td>
+                <td><a href="../job_offer/my-list.html" target="_blank">job_offer/my_list.html</a></td>
+                <td>추가</td>
+              </tr>
+              <tr class="new">
+                <td class="count"></td>
+                <td>상세</td>
+                <td><a href="../job_offer/detail.html" target="_blank">job_offer/detail.html</a></td>
+                <td>추가</td>
+              </tr>
+              <tr class="new">
+                <td class="count"></td>
+                <td>등록</td>
+                <td><a href="" target="_blank"></a></td>
+                <td>디자인 시안 요청</td>
+              </tr>
+              <tr class="new">
+                <td class="count"></td>
+                <td rowspan="3">구직정보</td>
+                <td>목록</td>
+                <td><a href="" target="_blank"></a></td>
+                <td>디자인 시안 요청</td>
+              </tr>
+              <tr class="new">
+                <td class="count"></td>
+                <td>상세</td>
+                <td><a href="" target="_blank"></a></td>
+                <td>디자인 시안 요청</td>
+              </tr>
+              <tr class="new">
+                <td class="count"></td>
+                <td>등록</td>
+                <td><a href="" target="_blank"></a></td>
+                <td>디자인 시안 요청</td>
+              </tr>
+              <tr class="new">
                 <td class="count"></td>
                 <td colspan="3">협력업체 목록</td>
                 <td><a href="../partners/list.html" target="_blank">partners/list.html</a></td>
-                <td>완료</td>
+                <td>수정</td>
               </tr>
             </tbody>
           </table>
@@ -209,10 +270,9 @@
 
     <script>
       const counts = document.querySelectorAll('.count');
-
       counts.forEach((el, idx) => {
         el.innerHTML = idx + 1;
-        console.log(el, idx);
+        //console.log(el, idx);
       });
     </script>
   </body>

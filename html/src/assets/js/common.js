@@ -16,8 +16,8 @@ const gb = (function () {
     listSwiper: $('.list-swiper').get(),
     listSwiper2: $('.list-swiper2').get(),
     btnActiveModal: $('.button-active-modal'),
+    btnCloseModal: $('.button-close-modal'),
     btnActiveTooltip: $('.button-active-tooltip'),
-    btnHoverTooltip: $('.button-hover-tooltip'),
     isMob: window.innerWidth <= 821 ? true : false,
     isFocus: false,
   };
@@ -221,61 +221,44 @@ gb.CommonFunction = (function () {
         }
       });
   };
-  const modal = () => {
-    // 공통 모달
-    gb.btnActiveModal.on('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+  const modalOn = () => {
+    // 공통 모달 열기
+    gb.btnActiveModal.on('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-      const trg = $(this),
-        modalName = trg.data('modal-name');
+      const trg = $(this);
+      const modalName = trg.data('modal-name');
 
-      if (trg.hasClass('on')) {
-        $('.button-active-modal').removeClass('on');
-        $('.modal').css('display', 'none');
-        $('.dimmed fixed').remove();
-        gb.body.css({
-          height: 'auto',
-          'overflow-y': 'visible',
-        });
-      } else {
-        $('.button-active-modal').not(trg).removeClass('on');
-        trg.addClass('on');
+      $('.modal').removeClass('zoomIn');
+      $('.dimmed').remove();
 
-        $('.modal').css('display', 'none');
-        $('.modal#modal-' + modalName)
-          .find('textarea')
-          .val('');
-        $('.modal#modal-' + modalName)
-          .stop()
-          .fadeIn(300);
+      trg.addClass('active');
+      $('.modal#modal-' + modalName).addClass('zoomIn');
 
-        gb.body.append('<div class="dimmed fixed modal-off"></div>');
-        gb.body.css({
-          height: '100vh',
-          'overflow-y': 'hidden',
-        });
-      }
+      gb.body.append('<div class="dimmed button-close-modal"></div>');
+      gb.body.css({
+        height: '100vh',
+        'overflow-y': 'hidden',
+      });
+      $('.dimmed').css('z-index', 999);
     });
 
-    $(document).on('click', '.modal-off', function () {
+    $(document).on('click', '.button-close-modal', () => {
       modalOff();
     });
   };
   const modalOff = () => {
     // 공통 모달 닫기
-    $('.button-active-modal').removeClass('on');
-    $('.modal').css('display', 'none');
-    $('.dimmed.fixed').remove();
-
-    // 입력 폼 리셋
-    $('.modal').find('input').val('');
-    $('.modal').find('textarea').val('');
+    gb.btnActiveModal.removeClass('active');
+    $('.modal').removeClass('zoomIn');
+    $('.dimmed').remove();
 
     gb.body.css({
       height: 'auto',
       'overflow-y': 'visible',
     });
+    $('.dimmed').css('z-index', 990);
   };
   const listSwiper = () => {
     // 메인 공통 스와이퍼
@@ -417,6 +400,8 @@ gb.CommonFunction = (function () {
     };
   };
   const toolTip = () => {
+    gb.btnHoverTooltip = $('.button-hover-tooltip');
+
     gb.btnActiveTooltip.on('click', function () {
       const _toolTipSet = toolTipSet(this);
       const _trg = $(this);
@@ -486,6 +471,7 @@ gb.CommonFunction = (function () {
   };
   const dropDown = () => {
     gb.dropDown = document.querySelectorAll('.dropDown');
+    gb.dropDown2 = document.querySelectorAll('.dropDown2');
 
     gb.dropDown.forEach(function (elem) {
       elem.addEventListener('mouseenter', function () {
@@ -507,6 +493,29 @@ gb.CommonFunction = (function () {
         this.children[1].style.opacity = 0;
         this.children[1].style.visibility = 'hidden';
         this.children[1].style.pointerEvents = 'none';
+      });
+    });
+
+    gb.dropDown2.forEach(function (elem) {
+      elem.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const el = elem.parentElement.nextElementSibling;
+
+        if (elem.classList.contains('on')) {
+          elem.classList.remove('on');
+          gsap.to(el, {
+            duration: 0.4,
+            height: 0,
+          });
+        } else {
+          elem.classList.add('on');
+          gsap.to(el, {
+            duration: 0.4,
+            height: 'auto',
+          });
+        }
       });
     });
   };
@@ -591,9 +600,13 @@ gb.CommonFunction = (function () {
 
     checkItem_.prop('checked', '');
   };
+  const niceSelect = () => {
+    $('.select-wrap select').niceSelect();
+  };
   const init = () => {
     setGnb();
-    //modal();
+    modalOn();
+    niceSelect();
     toolTip();
     checkAlll();
     vdPlay();
@@ -604,14 +617,14 @@ gb.CommonFunction = (function () {
   return {
     init,
     zoomIn,
-    //modalOff,
+    modalOff,
     listSwiper,
     listSwiper2,
     goScrollTop,
     fileUpload,
     copyUrl,
-    viewMore,
-    filterReset,
+    //viewMore,
+    //filterReset,
   };
 })();
 

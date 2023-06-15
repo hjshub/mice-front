@@ -2,28 +2,47 @@
 .animate {
   @include transition-duration(1s);
   @include transition-timing-function(cubic-bezier(0.25, 0.1, 0.25, 1));
+  @include transition-delay(0s);
+  opacity: 0;
+  pointer-events: none;
+  transition-property: opacity, transform;
+  -webkit-transition-property: opacity, -webkit-transform;
+  -moz-transition-property: opacity, -moz-transform;
+  -ms-transition-property: opacity, transform;
+
+  &.fast {
+    @include transition-duration(0.3s);
+  }
+
+  &.zoomOut {
+    @include transform(scale(0.66) translate(-50%, -50%));
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+
+  &.zoomIn {
+    opacity: 1;
+    pointer-events: auto;
+    @include transform(scale(1) translate(-50%, -50%));
+  }
+
+  &.animation--start {
+    opacity: 1;
+    pointer-events: auto;
+
+    &:not(.active-none) {
+      @include transform(none);
+    }
+  }
 }
-.animate.fast {
-  @include transition-duration(0.3s);
-}
+
 @for $i from 1 to 10 {
   .animate-delay-0#{$i} {
     @include transition-delay(unquote('0.#{$i}s'));
   }
 }
-[class*='fadeIn'] {
-  opacity: 0;
-  transition-property: opacity, transform;
-  -webkit-transition-property: opacity, -webkit-transform;
-  -moz-transition-property: opacity, -moz-transform;
-  -ms-transition-property: opacity, transform;
-}
-[class*='fadeIn'].animation--start {
-  opacity: 1;
-}
-[class*='fadeIn'].animation--start:not(.active-none) {
-  @include transform(none);
-}
+
 .fadeInUp {
   @include transform(translate3d(0, 30%, 0));
 }
@@ -221,5 +240,46 @@
 
   100% {
     transform: rotate(-0.28deg);
+  }
+}
+
+@-webkit-keyframes yoyo {
+  0% {
+    @include transform(translateY(0));
+  }
+  10% {
+    @include transform(translateY(7px));
+  }
+  15% {
+    @include transform(translateY(5px));
+  }
+  20% {
+    @include transform(translateY(7px));
+  }
+  25% {
+    @include transform(translateY(5px));
+  }
+  100% {
+    @include transform(translateY(0));
+  }
+}
+@keyframes yoyo {
+  0% {
+    @include transform(translateY(0));
+  }
+  10% {
+    @include transform(translateY(7px));
+  }
+  15% {
+    @include transform(translateY(5px));
+  }
+  20% {
+    @include transform(translateY(7px));
+  }
+  25% {
+    @include transform(translateY(5px));
+  }
+  100% {
+    @include transform(translateY(0));
   }
 }
