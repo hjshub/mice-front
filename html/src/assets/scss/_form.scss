@@ -821,6 +821,7 @@ button {
   overflow: hidden;
   position: relative;
   margin-left: 10px;
+  font-size: 0;
 
   @include _bp(821px) {
     width: 90px;
@@ -867,44 +868,42 @@ button {
 }
 
 .file-attach-image {
-  width: 417px;
-  height: 234px;
-  border: 1px solid $gray;
-  float: left;
-  overflow: hidden;
-  position: relative;
+  .thumbNail {
+    width: 140px;
+    height: 170px;
+    float: left;
+    overflow: hidden;
+    position: relative;
 
-  & + .file-attach {
-    display: inline-block;
-    width: -webkit-calc(100% - 440px);
-    width: -moz-calc(100% - 440px);
-    width: calc(100% - 440px);
-    margin-left: 20px;
-    vertical-align: top;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: transparent;
+      pointer-events: none;
+      border: 1px solid #ccc;
+      content: '';
+    }
 
-    & + .etc {
-      display: inline-block;
-      width: -webkit-calc(100% - 440px);
-      width: -moz-calc(100% - 440px);
-      width: calc(100% - 440px);
-      margin-top: 50px;
-      margin-left: 20px;
-
-      .info-txt {
-        &:first-of-type {
-          margin-top: 0 !important;
-        }
-      }
+    & + div {
+      width: -webkit-calc(100% - 150px);
+      width: -moz-calc(100% - 150px);
+      width: calc(100% - 150px);
+      margin-left: 10px;
     }
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    @include transform(translate(-50%, -50%));
+  .file-wrap {
+    width: 110px;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 0;
+
+    & + .description2 {
+      margin-top: 15px;
+    }
   }
 }
 

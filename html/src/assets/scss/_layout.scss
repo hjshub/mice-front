@@ -1172,6 +1172,10 @@ main {
     @include align-items('flex-start');
   }
 
+  &.end {
+    @include align-items('flex-end');
+  }
+
   &.center {
     @include justify-content('center');
   }
@@ -1187,7 +1191,7 @@ main {
   border-bottom: 2px solid $navy;
 
   .grid-wrap {
-    @include align-items('center');
+    @include align-items('start');
 
     @include _bp(821px) {
       grid-template-columns: 1fr;
@@ -1267,6 +1271,7 @@ main {
 
       &.skill-grade {
         > div {
+          @include align-items('flex-end');
           grid-template-columns: auto auto;
         }
 
@@ -1464,6 +1469,7 @@ main {
         dd {
           > div {
             grid-template-columns: auto auto;
+            @include align-items('flex-end');
           }
         }
 

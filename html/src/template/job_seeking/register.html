@@ -83,30 +83,30 @@
                   </dd>
                 </dl>
               </div>
-              <div class="grid-wrap col-2 gap40_15">
-                <dl class="flex-wrap">
+              <div class="grid-wrap col-2 gap40_15 start">
+                <dl class="flex-wrap start">
                   <dt><b>사진</b><span class="est"><em class="hidden-txt">필수</em></span></dt>
                   <dd>
-                    <div class="file-attach">
-                      <span class="text-wrap">
-                        <input type="text" class="fileName" title="파일명 및 확장자" disabled />
-                      </span>
-                      <span class="file-wrap">
-                        <label for="file-img"><em>파일선택</em></label>
-                        <input
-                          class="hidden-txt"
-                          type="file"
-                          id="file-img"
-                          title="파일 첨부"
-                          onchange="gb.CommonFunction.fileUpload(this);"
-                        />
-                      </span>
+                    <div class="file-attach-image flex-wrap end">
+                      <div class="thumbNail flex-wrap">
+                        <img src="../assets/images/default.jpg" alt="">
+                      </div>
+                      <div class="flex-wrap column start">
+                        <span class="file-wrap">
+                          <label for="file-img"><em>파일선택</em></label>
+                          <input
+                            class="hidden-txt"
+                            type="file"
+                            id="file-img"
+                            title="파일 첨부"
+                            onchange="gb.CommonFunction.fileUpload(this, 'image');"
+                          />
+                        </span>
+                        <span class="description2">※ jpg, png 파일만 등록 가능합니다.</span>
+                      </div>
                     </div>
                   </dd>
                 </dl>
-                <p class="description2">※ jpg, png 파일만 등록 가능합니다.</p>
-              </div>
-              <div class="grid-wrap col-2 gap40_15">
                 <dl class="flex-wrap">
                   <dt><b>이름</b><span class="est"><em class="hidden-txt">필수</em></span></dt>
                   <dd>

@@ -467,10 +467,10 @@ gb.CommonFunction = (function () {
     if (type == 'image') {
       // 이미지 업로드
       if (filetype == 'jpg' || filetype == 'gif' || filetype == 'png' || filetype == 'jpeg' || filetype == 'bmp') {
-        // 정상적인 이미지 확장자 파일일 경우
-        // fileReader.onload = function (e) {
-        //   $(el).closest('.file-up-list').find('.file-attach-image img').attr('src', e.target.result);
-        // };
+        //정상적인 이미지 확장자 파일일 경우
+        fileReader.onload = function (e) {
+          $(el).closest('.file-attach-image').find('.thumbNail img').attr('src', e.target.result);
+        };
       } else {
         alert('이미지 파일만 선택 할 수 있습니다.');
         parentObj = el.parentNode;
