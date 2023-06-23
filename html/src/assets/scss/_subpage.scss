@@ -1349,7 +1349,8 @@
       }
 
       &.info {
-        .hashTag {
+        .hashTag,
+        .category {
           margin: 40px 0 30px;
         }
         .tblStyle {
@@ -1396,11 +1397,171 @@
       }
 
       &.info {
-        .hashTag {
+        .hashTag,
+        .category {
           margin: 40px 0 30px;
         }
         .tblStyle {
           margin-top: 20px;
+        }
+        .searchInfo {
+          border-bottom: 0;
+          padding-bottom: 0;
+
+          h3 {
+            font-size: 2rem;
+          }
+
+          .search-wrap {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin-top: 20px;
+
+            .btn-wrap {
+              margin-top: 20px;
+            }
+
+            dl {
+              @include _bp(1024px) {
+                flex-direction: column;
+                -ms-flex-direction: column;
+
+                dt,
+                dd {
+                  width: 100%;
+                }
+
+                dd {
+                  margin-top: 10px;
+
+                  .double {
+                    .text-wrap {
+                      &.calendar {
+                        @include _bp(821px) {
+                          max-width: none;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          article {
+            margin-top: 60px;
+
+            .list {
+              ul {
+                margin-top: 20px;
+
+                li {
+                  overflow: hidden;
+
+                  > a {
+                    display: block;
+                    padding: 30px;
+                    position: relative;
+
+                    &:hover,
+                    &:focus {
+                      &::after {
+                        border: 2px solid $skyblue;
+                      }
+                    }
+
+                    &::after {
+                      position: absolute;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      top: 0;
+                      border: 1px solid #ccc;
+                      content: '';
+                    }
+                  }
+                }
+              }
+
+              dl {
+                @include display-flex;
+                @include align-items('center');
+                flex-direction: row;
+                -ms-flex-direction: row;
+
+                dt {
+                  width: 40px;
+                  font-size: 1.6rem;
+                }
+
+                dd {
+                  width: auto;
+                  margin-top: 0;
+                }
+              }
+
+              .info {
+                color: $navy;
+                font-size: 1.8rem;
+
+                dl {
+                  dt {
+                    width: auto;
+                    font-size: 2.4rem;
+
+                    b {
+                      font-weight: 700;
+                    }
+                  }
+                  dd {
+                    width: auto;
+                    margin-left: 20px;
+
+                    span {
+                      font-weight: 700;
+                      font-size: 1.8rem;
+                      color: $navy;
+
+                      & + span {
+                        &::before {
+                          margin-right: 7px;
+                          content: ',';
+                        }
+                      }
+                    }
+                  }
+                }
+
+                p {
+                  margin-top: 30px;
+                  @include line-clamp2;
+                }
+              }
+
+              .careers {
+                h5 {
+                  font-size: 1.6rem;
+                  color: $navy;
+                }
+
+                margin-top: 30px;
+                font-size: 1.6rem;
+
+                * {
+                  color: $gray2;
+                }
+              }
+
+              & + .btn-wrap {
+                margin-top: 60px;
+                button {
+                  em {
+                    font-size: 1.8rem;
+                  }
+                }
+              }
+            }
+          }
         }
       }
 
@@ -1766,7 +1927,7 @@
   .view-- {
     &head {
       float: left;
-      width: 345px;
+      width: 375px;
 
       @include _bp(1024px) {
         width: 300px;
@@ -1850,6 +2011,14 @@
           line-height: 1.3;
         }
 
+        span {
+          letter-spacing: -0.28rem;
+
+          @include _bp(821px) {
+            letter-spacing: -0.7px;
+          }
+        }
+
         @include _bp(1024px) {
           font-size: 2.4rem;
         }
@@ -1891,7 +2060,35 @@
         }
 
         & + dl {
-          margin-top: 10px;
+          margin-top: 5px;
+        }
+      }
+
+      figure {
+        margin-top: 40px;
+        border: 1px solid #cdcdcd;
+        width: 140px;
+        height: 170px;
+        overflow: hidden;
+
+        @include _bp(821px) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      .profile {
+        margin-top: 30px;
+
+        h5 {
+          font-size: 1.8rem;
+          color: $navy2;
+        }
+
+        dl {
+          &:first-of-type {
+            margin-top: 10px;
+          }
         }
       }
 
@@ -1906,7 +2103,7 @@
       width: calc(100% - 435px);
       float: right;
       color: $navy;
-      min-height: 460px;
+      min-height: 550px;
       font-size: 1.6rem;
 
       @include _bp(1024px) {
@@ -1930,11 +2127,43 @@
         overflow-wrap: break-word;
       }
     }
+
+    &profile {
+      dl {
+        dt {
+          font-size: 1.8rem;
+          color: $navy2;
+        }
+        dd {
+          font-size: 1.6rem;
+          color: $blueGray;
+
+          .tblStyle {
+            margin-top: 10px;
+
+            table {
+              thead {
+                th {
+                  height: 55px;
+                }
+              }
+              td {
+                padding: 7px 0;
+              }
+            }
+          }
+        }
+
+        & + dl {
+          margin-top: 15px;
+        }
+      }
+    }
   }
 
   .attachedFile {
     float: left;
-    max-width: 345px;
+    max-width: 375px;
     margin-top: 300px;
 
     @include _bp(1024px) {

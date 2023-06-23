@@ -93,7 +93,7 @@
                           <ul>
                             <li><a href="#" class="facebook"><em class="hidden-txt">페이스북 공유하기</em></a></li>
                             <li><a href="#" class="kakaotalk"><em class="hidden-txt">카카오 공유하기</em></a></li>
-                            <li><a href="#" class="email"><em class="hidden-txt">이메일</em></a></li>
+                            <li><a href="#" class="email button-active-modal" data-modal-name="sendMail"><em class="hidden-txt">이메일</em></a></li>
                             <li><a href="javascript:void(0);" onclick="gb.CommonFunction.copyUrl();" class="copyUrl"><em class="hidden-txt">url 공유하기</em></a></li>
                           </ul>
                         </div>
@@ -185,6 +185,10 @@
       <!-- #footer -->
       <footer id="footer">@@include('../include/footer.html')</footer>
       <!-- // #footer -->
+
+      <!-- 모달 -->
+      <!-- E MAIL 전송하기 -->
+      @@include('../include/modal-sendMail.html')
     </div>
   </body>
 </html>

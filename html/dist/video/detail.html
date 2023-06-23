@@ -237,7 +237,7 @@
                         <ul>
                           <li><a href="#" class="facebook"><em class="hidden-txt">페이스북 공유하기</em></a></li>
                           <li><a href="#" class="kakaotalk"><em class="hidden-txt">카카오 공유하기</em></a></li>
-                          <li><a href="#" class="email"><em class="hidden-txt">이메일</em></a></li>
+                          <li><a href="#" class="email button-active-modal" data-modal-name="sendMail"><em class="hidden-txt">이메일</em></a></li>
                           <li><a href="javascript:void(0);" onclick="gb.CommonFunction.copyUrl();" class="copyUrl"><em class="hidden-txt">url 공유하기</em></a></li>
                         </ul>
                       </div>
@@ -499,6 +499,64 @@
       <p class="copyright">Copyrights &copy; MICE플랫폼. 2022.</p>
     </footer>
     <!-- // #footer -->
+
+    <!-- 모달 -->
+    <!-- E MAIL 전송하기 -->
+    <div class="modal animate fast zoomOut" id="modal-sendMail">
+      <div class="modal-header flex-wrap edge">
+        <h4>
+          <span>E-Mail 전송하기</span>
+        </h4>
+        <button type="button" class="button-close-modal btn-close">
+          <em class="hidden-txt">레이어팝업 닫기</em>
+        </button>
+      </div>
+      <div class="modal-body customedScroll">
+        <div class="modal-contents">
+          <dl class="flex-wrap">
+            <dt><label for="sender">보내는분</label></dt>
+            <dd>
+              <div class="text-wrap grid-wrap gap-none col-2">
+                <input type="text" id="sender" />
+              </div>
+            </dd>
+          </dl>
+          <dl class="flex-wrap">
+            <dt><label for="recipient">받는 분</label></dt>
+            <dd>
+              <div class="text-wrap grid-wrap gap-none col-2">
+                <input type="text" id="recipient" />
+              </div>
+            </dd>
+          </dl>
+          <dl class="flex-wrap">
+            <dt><label for="title">메일 제목</label></dt>
+            <dd>
+              <div class="text-wrap">
+                <input type="text" id="title" />
+              </div>
+            </dd>
+          </dl>
+          <dl class="flex-wrap start">
+            <dt><label for="mailContent">메일 내용</label></dt>
+            <dd>
+              <div class="text-wrap">
+                <textarea name="" id="mailContent" cols="30" rows="8"></textarea>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="btn-wrap align-c">
+          <button type="button" class="btn-view md2 border rounded txt-color blueGray button-close-modal">
+            <em>닫기</em>
+          </button>
+          <button type="button" class="btn-view md2 border rounded bg-blueGray">
+            <em>보내기</em>
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </body>
 

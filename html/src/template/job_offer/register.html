@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko" class="active">
+  <head>
+    @@include('../include/head.html', { page_main: false, page_title:'구인정보 | 구인&middot;구직' })
+  </head>
+  <body>
+    @@include('../include/skipNav.html')
+
+    <div id="layout">
+      <!-- #gnb -->
+      <header id="gnb">@@include('../include/gnb.html', { path:'..' })</header>
+      <!-- // #gnb -->
+
+      <!-- #contents -->
+      <main id="contents" class="job">
+        <h1 class="hidden-txt">구인&middot;구직</h1>
+
+        <!-- 상단 배너 -->
+        <section class="subTop">
+          <div class="inner-wrap">
+            <h2>
+              <strong class="txt-scd-b">구인&middot;구직</strong><br />
+              <span class="txt-scd-r">MICE 산업은 여러분이 꼭 필요해요!</span>
+            </h2>
+          </div>
+        </section>
+        <section class="contents list info">
+          <nav class="breadCrumb">
+            <div class="inner-wrap clear">
+              <div class="bx-left pc-only">
+                <span>
+                  <a href="../index.html">
+                    <i class="icon icon-home">
+                      <em class="hidden-txt">홈</em>
+                    </i>
+                  </a>
+                </span>
+                <span><em>구인&middot;구직</em></span>
+                <span><em>구인정보</em></span>
+                <span><em>등록</em></span>
+              </div>
+              <div class="bx-right">
+                <form action="">
+                  <fieldset>
+                    <legend>검색</legend>
+                    <span>
+                      <input type="text" name="" id="" placeholder="검색어를 입력해주세요." />
+                      <button type="submit" class="button-search">
+                        <em class="hidden-txt">검색</em></i>
+                      </button>
+                    </span>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <div class="inner-wrap">
+            <p class="description align-r">필수 입력 정보입니다.</p>
+            <div class="form-wrap">
+              <div class="grid-wrap gap20">
+                <dl class="flex-wrap">
+                  <dt><b>채용구분</b><span class="est"><em class="hidden-txt">필수</em></span></dt>
+                  <dd class="flex-wrap">
+                    <div class="chk-wrap">
+                      <span>
+                        <input type="checkbox" name="" id="a1">
+                        <label for="a1"><em>기획&middot;운영</em></label>
+                      </span>
+                      <span>
+                        <input type="checkbox" name="" id="a2">
+                        <label for="a2"><em>뷰로&middot;센터</em></label>
+                      </span>
+                      <span>
+                        <input type="checkbox" name="" id="a3">
+                        <label for="a3"><em>진행요원</em></label>
+                      </span>
+                      <span>
+                        <input type="checkbox" name="" id="a4">
+                        <label for="a4"><em>지역 서포터즈</em></label>
+                      </span>
+                    </div>
+                    <p class="description2">※ 중복선택 가능</p>
+                  </dd>
+                </dl>
+                <dl class="flex-wrap">
+                  <dt><b>제목</b><span class="est"><em class="hidden-txt">필수</em></span></dt>
+                  <dd>
+                    <div class="text-wrap">
+                      <input type="text" />
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="flex-wrap">
+                  <dt><b>회사명</b><span class="est"><em class="hidden-txt">필수</em></span></dt>
+                  <dd>
+                    <div class="text-wrap">
+                      <input type="text" value="메씨인터내셔날" readonly />
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="flex-wrap">
+                  <dt><b>마감일</b><span class="est"><em class="hidden-txt">필수</em></span></dt>
+                  <dd>
+                    <div class="double">
+                      <span class="text-wrap calendar"><input type="text" autocomplete="off" inputmode="none" /></span>
+                      <span class="text-wrap calendar"><input type="text" autocomplete="off" inputmode="none"/></span>
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="flex-wrap">
+                  <dt><b>근무형태</b><span class="est"><em class="hidden-txt">필수</em></span></dt>
+                  <dd class="flex-wrap">
+                    <div class="chk-wrap">
+                      <span>
+                        <input type="checkbox" name="" id="b1">
+                        <label for="b1"><em>정규직</em></label>
+                      </span>
+                      <span>
+                        <input type="checkbox" name="" id="b2">
+                        <label for="b2"><em>계약직</em></label>
+                      </span>
+                      <span>
+                        <input type="checkbox" name="" id="b3">
+                        <label for="b3"><em>파견직</em></label>
+                      </span>
+                    </div>
+                    <p class="description2">※ 중복선택 가능</p>
+                  </dd>
+                </dl>
+                <dl class="flex-wrap start">
+                  <dt><b>모집내용</b><span class="est"><em class="hidden-txt">필수</em></span></dt>
+                  <dd>
+                    <div class="editor_" style="border:1px solid #ccc; min-height:500px;">
+                      <!-- 에디터 영역 -->
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="flex-wrap start">
+                  <dt><b>첨부파일</b></dt>
+                  <dd>
+                    <ul class="file-attach-list">
+                      <li>
+                        <div class="file-attach">
+                          <span class="text-wrap">
+                            <input type="text" class="fileName" title="파일명 및 확장자" disabled />
+                          </span>
+                          <span class="file-wrap">
+                            <label for="file-01"><em>파일선택</em></label>
+                            <input
+                              class="hidden-txt"
+                              type="file"
+                              id="file-01"
+                              title="파일 첨부"
+                              onchange="gb.CommonFunction.fileUpload(this);"
+                            />
+                          </span>
+                          <span class="btn-wrap inline">
+                            <button type="button" class="btn-delete bg-blueGray md rounded2 hidden" onclick="removeFile(this);"><em>파일삭제</em></button>
+                          </span>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="btn-wrap flex-wrap edge start">
+                      <span class="description2">※ pdf, ppt, doc, hwp, txt, zip 파일만 등록 가능</span>
+                      <button type="button" class="btn-add bg-gray6 md rounded2" onclick="addFileList();"><em>파일추가</em></button>
+                    </div>
+                  </dd>
+                </dl>
+                <dl class="flex-wrap">
+                  <dt><b>상태</b></dt>
+                  <dd>
+                    <div class="radio-wrap">
+                      <span>
+                        <input type="radio" name="visible" id="visible">
+                        <label for="visible"><em>노출</em></label>
+                      </span>
+                      <span>
+                        <input type="radio" name="visible" id="hidden" checked />
+                        <label for="hidden"><em>미노출</em></label>
+                      </span>
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="btn-wrap align-c">
+              <button type="button" class="btn-cancel md2 border rounded txt-color blueGray"><em>취소</em></button>
+              <button type="button" class="btn-register md2 bg-blueGray rounded"><em>등록</em></button>
+              <!-- <button type="button" class="btn-register md2 bg-blueGray rounded"><em>수정</em></button> -->
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- // #contents -->
+
+      <!-- #footer -->
+      <footer id="footer">@@include('../include/footer.html')</footer>
+      <!-- // #footer -->
+    </div>
+
+    <script>
+    // 첨부파일 파일추가
+    const addFileList = () => {
+      const fileAttachList = document.querySelector('.file-attach-list');
+      const fileAttach = document.querySelectorAll('.file-attach-list .file-attach');
+      const listItem = document.createElement('li');
+      const id = Math.random().toFixed(7).split('.');
+
+      fileAttach[0].lastElementChild.children[0].classList.remove('hidden');
+
+      listItem.innerHTML = `
+      <div class="file-attach">
+        <span class="text-wrap">
+          <input type="text" class="fileName" title="파일명 및 확장자" disabled />
+        </span>
+        <span class="file-wrap">
+          <label for="file-${id[1]}"><em>파일선택</em></label>
+          <input
+            class="hidden-txt"
+            type="file"
+            id="file-${id[1]}"
+            title="파일 첨부"
+            onchange="gb.CommonFunction.fileUpload(this);"
+          />
+        </span>
+        <span class="btn-wrap inline">
+          <button type="button" class="btn-delete bg-blueGray md rounded2" onclick="removeFile(this);"><em>파일삭제</em></button>
+        </span>
+      </div>
+      `;
+
+      fileAttachList.append(listItem);
+    };
+
+    // 첨부파일삭제
+    const removeFile = (t) => {
+      const fileAttachList = document.querySelector('.file-attach-list');
+      const btnDelete = document.querySelectorAll('.file-attach-list .btn-delete');
+
+      if (fileAttachList.children.length <= 2) {
+        btnDelete.forEach(function (el, idx) {
+          el.classList.add('hidden');
+        });
+      }
+
+      $(t).closest('li').remove();
+    };
+    </script>
+  </body>
+</html>

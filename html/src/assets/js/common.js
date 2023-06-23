@@ -143,7 +143,7 @@ gb.CommonFunction = (function () {
       elem.addEventListener('click', function () {
         gb.visualWrap.classList.remove('zoom--In');
         gb.dialog.forEach((el) => {
-          el.style.opacity = 1;
+          //el.style.opacity = 1;
           el.style.visibility = 'visible';
           el.nextElementSibling.style.opacity = 0;
           el.nextElementSibling.style.pointerEvents = 'none';
@@ -153,9 +153,117 @@ gb.CommonFunction = (function () {
       });
     });
 
-    //   gsap.to('.dialog01', { duration: 0, text: 'MICE...<br/>산업..?', ease: 'none' });
-    //   gsap.to('.dialog02', { duration: 0, text: '취업준비<br/> 완료!!', ease: 'none' });
-    //   gsap.to('.dialog03', { duration: 0, text: '새로운<br/> 소식이 떴나?', ease: 'none' });
+    drawingDialog();
+  };
+  const drawingDialog = () => {
+    const timeLine = gsap.timeline({
+      repeat: '-1',
+      repeatDelay: 2,
+    });
+
+    timeLine
+      // dialog 01
+      .fromTo(
+        gb.dialog[0],
+        {
+          x: '-10%',
+        },
+        {
+          x: 0,
+          delay: 1,
+          opacity: 1,
+          duration: 0.4,
+          ease: 'ease-out',
+          onComplete: function () {
+            gb.dialog[0].style.pointerEvents = 'auto';
+          },
+        }
+      )
+      .to(gb.dialog[0], {
+        delay: 0.3,
+        duration: 1,
+        text: {
+          value: gb.dialog[0].children[0].innerHTML,
+          //speed: 1,
+        },
+        ease: 'none',
+      })
+      .to(gb.dialog[0], {
+        delay: 3,
+        x: '-10%',
+        opacity: 0,
+        onComplete: function () {
+          gb.dialog[0].style.pointerEvents = 'none';
+        },
+      })
+      // dialog 02
+      .fromTo(
+        gb.dialog[1],
+        {
+          y: '10%',
+        },
+        {
+          y: 0,
+          delay: 0,
+          opacity: 1,
+          duration: 0.4,
+          ease: 'ease-out',
+          onComplete: function () {
+            gb.dialog[1].style.pointerEvents = 'auto';
+          },
+        }
+      )
+      .to(gb.dialog[1], {
+        delay: 0.3,
+        duration: 1,
+        text: {
+          value: gb.dialog[1].children[0].innerHTML,
+          //speed: 1,
+        },
+        ease: 'none',
+      })
+      .to(gb.dialog[1], {
+        delay: 3,
+        y: '10%',
+        opacity: 0,
+        onComplete: function () {
+          gb.dialog[1].style.pointerEvents = 'none';
+        },
+      })
+      // dialog 03
+      .fromTo(
+        gb.dialog[2],
+        {
+          y: '10%',
+        },
+        {
+          y: 0,
+          delay: 0,
+          opacity: 1,
+          duration: 0.4,
+          ease: 'ease-out',
+          onComplete: function () {
+            gb.dialog[2].style.pointerEvents = 'auto';
+          },
+        }
+      )
+      .to(gb.dialog[2], {
+        delay: 0.3,
+        duration: 1,
+        text: {
+          value: gb.dialog[2].children[0].innerHTML,
+          //speed: 1,
+        },
+        ease: 'none',
+      })
+      .to(gb.dialog[2], {
+        delay: 3,
+        y: '10%',
+        opacity: 0,
+        onComplete: function () {
+          gb.dialog[2].style.pointerEvents = 'none';
+        },
+      });
   };
   const setGnb = () => {
     // 헤더
@@ -241,7 +349,7 @@ gb.CommonFunction = (function () {
         height: '100vh',
         'overflow-y': 'hidden',
       });
-      $('.dimmed').css('z-index', 999);
+      $('.dimmed').css('z-index', 1001);
     });
 
     $(document).on('click', '.button-close-modal', () => {
@@ -505,16 +613,51 @@ gb.CommonFunction = (function () {
 
         if (elem.classList.contains('on')) {
           elem.classList.remove('on');
-          gsap.to(el, {
-            duration: 0.4,
-            height: 0,
-          });
+
+          if (el.classList.contains('clip')) {
+            gsap.fromTo(
+              el,
+              {
+                height: 'auto',
+              },
+              {
+                duration: 0.2,
+                height: `${gb.el_H}px`,
+                onComplete: function () {
+                  el.children[0].classList.add('txt-line-clamp2');
+                  el.style.height = 'auto';
+                },
+                overwrite: true,
+              }
+            );
+          } else {
+            gsap.to(el, {
+              duration: 0.3,
+              height: 0,
+            });
+          }
         } else {
           elem.classList.add('on');
-          gsap.to(el, {
-            duration: 0.4,
-            height: 'auto',
-          });
+          gb.el_H = el.clientHeight;
+          if (el.classList.contains('clip')) {
+            el.children[0].classList.remove('txt-line-clamp2');
+            gsap.fromTo(
+              el,
+              {
+                height: `${gb.el_H}px`,
+              },
+              {
+                duration: 0.3,
+                height: 'auto',
+                overwrite: true,
+              }
+            );
+          } else {
+            gsap.to(el, {
+              duration: 0.3,
+              height: 'auto',
+            });
+          }
         }
       });
     });
@@ -585,28 +728,57 @@ gb.CommonFunction = (function () {
       });
     }
   };
-  const viewMore = (t) => {
-    const hd = $(t).closest('header');
-    if (hd.hasClass('fold')) {
-      hd.removeClass('fold');
-      $(t).find('em').text('더보기');
-    } else {
-      hd.addClass('fold');
-      $(t).find('em').text('접기');
-    }
-  };
-  const filterReset = () => {
-    const checkItem_ = $('input[type=checkbox][name^=chk_]');
-
-    checkItem_.prop('checked', '');
-  };
   const niceSelect = () => {
     $('.select-wrap select').niceSelect();
+
+    // const niceSelect = document.querySelectorAll('.nice-select');
+
+    // niceSelect.forEach(function (el) {
+    //   const list = el.lastElementChild.children;
+    //   const max = el.lastElementChild.childElementCount;
+
+    //   for (var l = 0; l < max; l++) {
+    //     (function (n) {
+    //       list[n].addEventListener('click', function () {
+    //         el.previousElementSibling.selectedIndex = n;
+
+    //         const selectedIndex = el.previousElementSibling.selectedIndex;
+    //         const selectedValue = el.previousElementSibling.value;
+
+    //         console.log(selectedIndex, selectedValue);
+    //       });
+    //     })(l);
+    //   }
+    // });
+  };
+  const createCalendar = function () {
+    const defaultOption = {
+      closeText: '닫기',
+      currentText: '오늘',
+      prevText: '이전 달',
+      nextText: '다음 달',
+      monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+      dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+      dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+      weekHeader: '주',
+      yearSuffix: '년',
+    };
+
+    $.datepicker.setDefaults(defaultOption);
+
+    $('.calendar > input[type=text]').datepicker({
+      showOn: 'both',
+      dateFormat: 'yy-mm-dd',
+      minDate: 'd',
+    });
   };
   const init = () => {
     setGnb();
     modalOn();
     niceSelect();
+    createCalendar();
     toolTip();
     checkAlll();
     vdPlay();
@@ -617,14 +789,15 @@ gb.CommonFunction = (function () {
   return {
     init,
     zoomIn,
+    drawingDialog,
+    niceSelect,
+    createCalendar,
     modalOff,
     listSwiper,
     listSwiper2,
     goScrollTop,
     fileUpload,
     copyUrl,
-    //viewMore,
-    //filterReset,
   };
 })();
 

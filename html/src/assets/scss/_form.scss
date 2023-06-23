@@ -46,7 +46,7 @@ button {
     display: inline-block;
     min-width: 110px;
     height: 38px;
-    padding: 0;
+    padding: 0 20px;
     border: none;
     font-size: 0;
     position: relative;
@@ -60,6 +60,10 @@ button {
       margin-left: 10px;
     }
 
+    &.hidden {
+      display: none !important;
+    }
+
     &.wide {
       width: 100%;
     }
@@ -67,6 +71,10 @@ button {
     &.lg {
       min-width: 140px;
       height: 50px;
+
+      @include _bp(561px) {
+        min-width: 90px;
+      }
 
       em {
         font-weight: 600;
@@ -103,6 +111,10 @@ button {
       border-radius: 30px;
     }
 
+    &.rounded2 {
+      border-radius: 5px;
+    }
+
     &.border {
       border-width: 1px;
       border-style: solid;
@@ -121,6 +133,10 @@ button {
     }
     &.bg-gray6 {
       background-color: $gray6;
+      color: $white;
+    }
+    &.bg-skyblue {
+      background-color: $skyblue;
       color: $white;
     }
 
@@ -194,6 +210,10 @@ button {
   border: none;
   vertical-align: top;
   font-size: 0;
+
+  &.wide {
+    width: 100%;
+  }
 
   label {
     position: absolute;
@@ -278,16 +298,6 @@ button {
     box-shadow: none;
     height: 38px;
     border: 1px solid #ccc;
-
-    &.calendar {
-      padding-right: 42px;
-
-      & + img {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-      }
-    }
   }
 
   textarea {
@@ -297,6 +307,30 @@ button {
     border: 1px solid #ccc;
     border-radius: 0;
     box-shadow: none;
+    resize: none;
+  }
+
+  &.calendar {
+    max-width: 245px;
+    position: relative;
+
+    @include _bp(561px) {
+      max-width: none;
+    }
+
+    input[type='text'] {
+      padding-right: 37px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      @include icon;
+      @include icon-calendar;
+      pointer-events: none;
+      content: '';
+    }
   }
 
   &.has-button {
@@ -366,18 +400,18 @@ button {
   font-size: 0;
 
   .text-wrap {
-    width: -webkit-calc((100% - 30px) / 2);
-    width: -moz-calc((100% - 30px) / 2);
-    width: calc((100% - 30px) / 2);
+    width: -webkit-calc((100% - 20px) / 2);
+    width: -moz-calc((100% - 20px) / 2);
+    width: calc((100% - 20px) / 2);
 
     & + .text-wrap {
-      margin-left: 30px;
+      margin-left: 20px;
 
       &::before {
         position: absolute;
         top: 0;
-        left: -30px;
-        width: 30px;
+        left: -20px;
+        width: 20px;
         line-height: 38px;
         color: $black;
         font-size: 1.7rem;
@@ -406,7 +440,7 @@ button {
 
       & + label {
         display: inline-block;
-        padding-left: 30px;
+        padding-left: 28px;
         height: 20px;
         vertical-align: top;
         line-height: 1.2;
@@ -417,7 +451,7 @@ button {
           top: 0;
           width: 20px;
           height: 20px;
-          border: 1px solid $mint;
+          border: 1px solid #ccc;
           border-radius: 50%;
           background-color: $white;
           content: '';
@@ -435,7 +469,7 @@ button {
           height: 10px;
           border: none;
           border-radius: 50%;
-          background-color: $mint;
+          background-color: #545767;
           z-index: 10;
 
           @include _bp(561px) {
@@ -599,23 +633,24 @@ button {
       left: 0;
       top: 0;
       border: 0;
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       opacity: 0;
 
       & + label {
         display: inline-block;
-        padding-left: 18px;
-        height: 18px;
+        padding-left: 20px;
+        height: 20px;
         vertical-align: top;
-        line-height: 18px;
+        line-height: 20px;
+        color: $blueGray;
 
         &::before {
           position: absolute;
           top: 0;
           left: 0;
-          width: 18px;
-          height: 18px;
+          width: 20px;
+          height: 20px;
           border: 1px solid #ccc;
           background-color: $white;
           border-radius: 3px;
@@ -640,13 +675,11 @@ button {
 
           &::after {
             position: absolute;
-            left: 0;
-            top: 50%;
+            left: 5px;
+            top: 6px;
             background-color: transparent;
-            @include transform(translateY(-50%));
             @include icon;
             @include icon-checked;
-            margin-left: 4px;
             content: '';
           }
         }
@@ -773,19 +806,11 @@ button {
 
 /*file*/
 .file-attach {
+  display: grid;
+  column-gap: 0;
+  row-gap: 0;
+  grid-template-columns: 1fr auto auto;
   font-size: 0;
-
-  .text-wrap {
-    width: -webkit-calc(100% - 160px);
-    width: -moz-calc(100% - 160px);
-    width: calc(100% - 160px);
-
-    @include _bp(561px) {
-      width: -webkit-calc(100% - 100px);
-      width: -moz-calc(100% - 100px);
-      width: calc(100% - 100px);
-    }
-  }
 }
 
 .file-wrap {
@@ -793,13 +818,16 @@ button {
   width: 130px;
   height: 38px;
   line-height: 38px;
-  margin-left: 30px;
   overflow: hidden;
   position: relative;
+  margin-left: 10px;
+
+  @include _bp(821px) {
+    width: 90px;
+  }
 
   @include _bp(561px) {
-    width: 90px;
-    margin-left: 10px;
+    width: 75px;
   }
 
   label {
@@ -821,6 +849,19 @@ button {
       font-size: 1.7rem;
       line-height: 1;
       // top: -2px;
+    }
+  }
+
+  & + .btn-wrap {
+    button {
+      margin-left: 10px;
+
+      em {
+        font-size: 1.6rem;
+      }
+      @include _bp(561px) {
+        min-width: 75px;
+      }
     }
   }
 }
@@ -1001,7 +1042,7 @@ button {
     table-layout: fixed;
 
     thead th {
-      border-color: 1px solid $navy;
+      border-color: $navy;
       height: 80px;
     }
 
