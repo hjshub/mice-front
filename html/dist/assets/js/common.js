@@ -459,27 +459,41 @@ gb.CommonFunction = (function () {
     const filepoint = el.value.substring(pathpoint + 1, el.length);
     const filetype = filepoint.toLowerCase(); // 업로드 파일 확장자
     const fileReader = new FileReader();
-    const fileName = $(el)[0].files[0].name; // 첨부 파일 명
-    const filesize = $(el)[0].files[0].size; // 첨부 파일 용량
+    const fileName = el.files[0].name; // 첨부 파일 명
+    const filesize = el.files[0].size; // 첨부 파일 용량
 
-    fileReader.readAsDataURL($(el)[0].files[0]);
+    fileReader.readAsDataURL(el.files[0]);
 
     if (type == 'image') {
       // 이미지 업로드
       if (filetype == 'jpg' || filetype == 'gif' || filetype == 'png' || filetype == 'jpeg' || filetype == 'bmp') {
         //정상적인 이미지 확장자 파일일 경우
         fileReader.onload = function (e) {
-          $(el).closest('.file-attach-image').find('.thumbNail img').attr('src', e.target.result);
+          el.closest('.file-attach-image').children[0].children[0].setAttribute('src', e.target.result);
         };
       } else {
-        alert('이미지 파일만 선택 할 수 있습니다.');
+        alert('이미지 파일만 등록 가능 합니다.');
+        parentObj = el.parentNode;
+        node = parentObj.replaceChild(el.cloneNode(true), el);
+        return false;
+      }
+    } else {
+      if (
+        filetype == 'pdf' ||
+        filetype == 'ppt' ||
+        filetype == 'doc' ||
+        filetype == 'hwp' ||
+        filetype == 'txt' ||
+        filetype == 'zip'
+      ) {
+        el.closest('.file-attach').children[0].children[0].value = fileName;
+      } else {
+        alert('첨부파일은 pdf, ppt, doc, hwp, txt, zip만 등록 가능 합니다');
         parentObj = el.parentNode;
         node = parentObj.replaceChild(el.cloneNode(true), el);
         return false;
       }
     }
-
-    $(el).closest('.file-attach').find('.text-wrap input[type=text]').val(fileName);
   };
   const copyToClipboard = (val) => {
     // 클립 보드에 복사

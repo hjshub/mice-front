@@ -87,7 +87,7 @@
   const removeAddressForm = (t) => {
     const addressList = document.querySelector('.address .list');
     const btnDelete = document.querySelectorAll('.address .list .btn-delete');
-    const parentEl = t.parentElement.parentElement;
+    const parentEl = t.closest('.flex-wrap');
 
     if (addressList.children.length <= 2) {
       btnDelete.forEach(function (el, idx) {
@@ -155,7 +155,7 @@
   const removeCareerForm = (t) => {
     const careerList = document.querySelector('.career ul');
     const btnDelete = document.querySelectorAll('.career li .btn-delete');
-    const parentEl = t.parentElement.parentElement;
+    const parentEl = t.closest('li');
 
     if (careerList.children.length <= 2) {
       btnDelete.forEach(function (el, idx) {
@@ -192,7 +192,7 @@
   const removeCertForm = (t) => {
     const certList = document.querySelector('.certificate .list');
     const btnDelete = document.querySelectorAll('.certificate .list .btn-delete');
-    const parentEl = t.parentElement.parentElement;
+    const parentEl = t.closest('.flex-wrap');
 
     if (certList.children.length <= 2) {
       btnDelete.forEach(function (el, idx) {
@@ -248,7 +248,7 @@
   const removeSkillForm = (t) => {
     const skillGradeList = document.querySelector('.skill-grade .list');
     const btnDelete = document.querySelectorAll('.skill-grade .list .btn-delete');
-    const parentEl = t.parentElement.parentElement;
+    const parentEl = t.closest('.flex-wrap');
 
     if (skillGradeList.children.length <= 2) {
       btnDelete.forEach(function (el, idx) {
@@ -307,6 +307,6 @@
       });
     }
 
-    $(t).closest('li').remove();
+    t.closest('li').remove();
   };
 </script>
