@@ -58,6 +58,11 @@ $arrow_color: #ccc !default;
     @include icon-arr-down;
     @include transition(transform 0.2s ease-out);
     content: '';
+
+    @include _bp(821px) {
+      @include icon--retina;
+      @include icon--retina-arr-down-2x;
+    }
   }
 
   &.open {

@@ -231,7 +231,7 @@ button {
       position: absolute;
       display: inline-block;
       @include icon;
-      @include icon-view-next-gr;
+      @include icon-arr-down;
       right: 10px;
       top: 50%;
       @include transform(translateY(-50%));
@@ -239,7 +239,7 @@ button {
 
       @include _bp(821px) {
         @include icon--retina;
-        @include icon--retina-view-next-gr-2x;
+        @include icon--retina-arr-down-2x;
       }
     }
   }
@@ -330,6 +330,11 @@ button {
       @include icon-calendar;
       pointer-events: none;
       content: '';
+
+      @include _bp(821px) {
+        @include icon--retina;
+        @include icon--retina-calendar-2x;
+      }
     }
   }
 
@@ -681,6 +686,11 @@ button {
             @include icon;
             @include icon-checked;
             content: '';
+
+            @include _bp(821px) {
+              @include icon--retina;
+              @include icon--retina-checked-2x;
+            }
           }
         }
       }
