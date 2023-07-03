@@ -2,39 +2,7 @@
   window.addEventListener('load', function () {
     showAddress();
     showCareer();
-    hiddenFormChange();
   });
-
-  // 수정 페이지 숨김 버튼 노출
-  const hiddenFormChange = () => {
-    const skillGradeList = document.querySelector('.skill-grade .list');
-    const certList = document.querySelector('.certificate .list');
-    const fileAttachList = document.querySelector('.file-attach-list');
-
-    if (skillGradeList.children.length > 1) {
-      const hidden = document.querySelectorAll('.skill-grade .hidden');
-
-      hidden.forEach(function (el) {
-        el.classList.remove('hidden');
-      });
-    }
-
-    if (certList.children.length > 1) {
-      const hidden = document.querySelectorAll('.certificate .hidden');
-
-      hidden.forEach(function (el) {
-        el.classList.remove('hidden');
-      });
-    }
-
-    if (fileAttachList.children.length > 1) {
-      const hidden = document.querySelectorAll('.file-attach-list .hidden');
-
-      hidden.forEach(function (el) {
-        el.classList.remove('hidden');
-      });
-    }
-  };
 
   // 경력사항 등록
   const showCareer = () => {

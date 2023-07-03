@@ -300,8 +300,8 @@
                         <div class="flex-wrap">
                           <div class="grid-wrap col-2 double">
                             <div class="select-wrap wide">
-                              <label for="language-1"><em class="hidden-txt">언어선택</em></label>
-                              <select name="" id="language-1" class="wide">
+                              <label for="language"><em class="hidden-txt">언어선택</em></label>
+                              <select name="" id="language" class="wide">
                                 <option value="" disabled selected>언어선택</option>
                                 <option value="">영어</option>
                                 <option value="">중국어</option>
@@ -311,35 +311,8 @@
                               </select>
                             </div>
                             <div class="select-wrap wide">
-                              <label for="grade-1"><em class="hidden-txt">레벨</em></label>
-                              <select name="" id="grade-1" class="wide">
-                                <option value="" disabled selected>레벨</option>
-                                <option value="">상</option>
-                                <option value="">중</option>
-                                <option value="">하</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="btn-wrap inline">
-                            <button type="button" class="btn-delete bg-blueGray md rounded2 hidden" onclick="removeSkillForm(this);"><em>삭제</em></button>
-                          </div>
-                        </div>
-                        <div class="flex-wrap">
-                          <div class="grid-wrap col-2 double">
-                            <div class="select-wrap wide">
-                              <label for="language-2"><em class="hidden-txt">언어선택</em></label>
-                              <select name="" id="language-2" class="wide">
-                                <option value="" disabled selected>언어선택</option>
-                                <option value="">영어</option>
-                                <option value="">중국어</option>
-                                <option value="">일본어</option>
-                                <option value="">독일어</option>
-                                <option value="">스페인어</option>
-                              </select>
-                            </div>
-                            <div class="select-wrap wide">
-                              <label for="grade-2"><em class="hidden-txt">레벨</em></label>
-                              <select name="" id="grade-2" class="wide">
+                              <label for="grade"><em class="hidden-txt">레벨</em></label>
+                              <select name="" id="grade" class="wide">
                                 <option value="" disabled selected>레벨</option>
                                 <option value="">상</option>
                                 <option value="">중</option>
@@ -363,14 +336,6 @@
                   <dd class="certificate">
                     <div class="grid-wrap gap-none">
                       <div class="list">
-                        <div class="flex-wrap">
-                          <div class="text-wrap">
-                            <input type="text" placeholder="어학 증명서, 자격증이 있을 경우 입력 부탁드립니다. (최대 40자)" />
-                          </div>
-                          <div class="btn-wrap inline">
-                            <button type="button" class="btn-delete bg-blueGray md rounded2 hidden" onclick="removeCertForm(this);"><em>삭제</em></button>
-                          </div>
-                        </div>
                         <div class="flex-wrap">
                           <div class="text-wrap">
                             <input type="text" placeholder="어학 증명서, 자격증이 있을 경우 입력 부탁드립니다. (최대 40자)" />
@@ -417,26 +382,6 @@
                               class="hidden-txt"
                               type="file"
                               id="file-01"
-                              title="파일 첨부"
-                              onchange="gb.CommonFunction.fileUpload(this);"
-                            />
-                          </span>
-                          <span class="btn-wrap inline">
-                            <button type="button" class="btn-delete bg-blueGray md rounded2 hidden" onclick="removeFile(this);"><em>파일삭제</em></button>
-                          </span>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="file-attach">
-                          <span class="text-wrap">
-                            <input type="text" class="fileName" title="파일명 및 확장자" disabled />
-                          </span>
-                          <span class="file-wrap">
-                            <label for="file-02"><em>파일선택</em></label>
-                            <input
-                              class="hidden-txt"
-                              type="file"
-                              id="file-02"
                               title="파일 첨부"
                               onchange="gb.CommonFunction.fileUpload(this);"
                             />
