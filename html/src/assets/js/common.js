@@ -791,7 +791,7 @@ gb.CommonFunction = (function () {
   const init = () => {
     setGnb();
     modalOn();
-    niceSelect();
+    //niceSelect();
     createCalendar();
     toolTip();
     checkAlll();

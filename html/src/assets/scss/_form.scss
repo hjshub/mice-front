@@ -227,14 +227,13 @@ button {
     z-index: 10;
     background-color: rgba(255, 255, 255, 1);
 
-    &::after {
+    &:after {
       position: absolute;
-      display: inline-block;
+      top: 15px;
+      right: 11px;
       @include icon;
       @include icon-arr-down;
-      right: 10px;
-      top: 50%;
-      @include transform(translateY(-50%));
+      @include transition(transform 0.2s ease-out);
       content: '';
 
       @include _bp(821px) {
@@ -256,6 +255,12 @@ button {
     color: $gray;
     z-index: 10;
     font-size: 1.6rem;
+
+    option {
+      &:disabled {
+        display: none;
+      }
+    }
 
     &::-ms-expand {
       display: none;
