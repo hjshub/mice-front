@@ -742,29 +742,29 @@ gb.CommonFunction = (function () {
       });
     }
   };
-  const niceSelect = () => {
-    $('.select-wrap select').niceSelect();
+  // const niceSelect = () => {
+  //   $('.select-wrap select').niceSelect();
 
-    // const niceSelect = document.querySelectorAll('.nice-select');
+  //   // const niceSelect = document.querySelectorAll('.nice-select');
 
-    // niceSelect.forEach(function (el) {
-    //   const list = el.lastElementChild.children;
-    //   const max = el.lastElementChild.childElementCount;
+  //   // niceSelect.forEach(function (el) {
+  //   //   const list = el.lastElementChild.children;
+  //   //   const max = el.lastElementChild.childElementCount;
 
-    //   for (var l = 0; l < max; l++) {
-    //     (function (n) {
-    //       list[n].addEventListener('click', function () {
-    //         el.previousElementSibling.selectedIndex = n;
+  //   //   for (var l = 0; l < max; l++) {
+  //   //     (function (n) {
+  //   //       list[n].addEventListener('click', function () {
+  //   //         el.previousElementSibling.selectedIndex = n;
 
-    //         const selectedIndex = el.previousElementSibling.selectedIndex;
-    //         const selectedValue = el.previousElementSibling.value;
+  //   //         const selectedIndex = el.previousElementSibling.selectedIndex;
+  //   //         const selectedValue = el.previousElementSibling.value;
 
-    //         console.log(selectedIndex, selectedValue);
-    //       });
-    //     })(l);
-    //   }
-    // });
-  };
+  //   //         console.log(selectedIndex, selectedValue);
+  //   //       });
+  //   //     })(l);
+  //   //   }
+  //   // });
+  // };
   const createCalendar = function () {
     const defaultOption = {
       closeText: '닫기',
@@ -804,7 +804,7 @@ gb.CommonFunction = (function () {
     init,
     zoomIn,
     drawingDialog,
-    niceSelect,
+    // niceSelect,
     createCalendar,
     modalOff,
     listSwiper,
