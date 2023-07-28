@@ -382,10 +382,11 @@ textarea {
   }
 
   .btn-more {
-    position: absolute;
+    position: absolute !important;
     right: 0;
     bottom: 0;
-    height: 45px;
+    height: 45px !important;
+    min-width: auto !important;
 
     @include _bp(821px) {
       height: 35px;

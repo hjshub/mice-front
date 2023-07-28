@@ -42,7 +42,7 @@
 button {
   background-color: transparent;
 
-  &[class*='btn-'] {
+  &[class*='btn-']:not([class*='note']) {
     display: inline-block;
     min-width: 110px;
     height: 38px;
@@ -151,51 +151,51 @@ button {
         vertical-align: middle;
       }
     }
-  }
 
-  &.btn- {
-    &prev,
-    &next {
-      border-radius: 30px;
-      border: 2px solid $gray4;
-      min-width: 80px;
-      padding: 0;
-      background-color: transparent;
-      background-color: $white;
+    &.btn- {
+      &prev,
+      &next {
+        border-radius: 30px;
+        border: 2px solid $gray4;
+        min-width: 80px;
+        padding: 0;
+        background-color: transparent;
+        background-color: $white;
 
-      em {
-        font-weight: 600;
-        font-size: 16px;
-      }
-
-      & + span {
-        display: inline-block;
-        margin: 0 20px;
-        font-size: 15px;
-
-        * {
-          vertical-align: bottom;
+        em {
+          font-weight: 600;
+          font-size: 16px;
         }
 
-        b {
-          font-size: 16px;
+        & + span {
+          display: inline-block;
+          margin: 0 20px;
+          font-size: 15px;
+
+          * {
+            vertical-align: bottom;
+          }
+
+          b {
+            font-size: 16px;
+          }
         }
       }
     }
-  }
 
-  &.btn-close {
-    min-width: auto;
-    padding: 0;
+    &.btn-close {
+      min-width: auto;
+      padding: 0;
 
-    &::before {
-      @include icon;
-      @include icon-close-wh2;
-      content: '';
+      &::before {
+        @include icon;
+        @include icon-close-wh2;
+        content: '';
 
-      @include _bp(821px) {
-        @include icon--retina;
-        @include icon--retina-close-wh-2x;
+        @include _bp(821px) {
+          @include icon--retina;
+          @include icon--retina-close-wh-2x;
+        }
       }
     }
   }

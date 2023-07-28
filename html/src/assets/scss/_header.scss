@@ -34,10 +34,10 @@
     > div {
       height: 40px;
       max-width: none;
+    }
 
-      @include _bp(1024px) {
-        display: none;
-      }
+    @include _bp(1024px) {
+      display: none;
     }
 
     .symbol {
@@ -116,6 +116,7 @@
         width: 42px;
         height: 30px;
         min-width: auto;
+        padding: 0;
 
         i {
           position: absolute;
@@ -440,7 +441,6 @@
       font-size: 0;
       li {
         display: inline-block;
-        line-height: 33px;
 
         a {
           display: inline-block;
@@ -492,7 +492,7 @@
         opacity: 0;
         visibility: hidden;
         position: absolute;
-        top: 33px;
+        top: auto;
         left: 50%;
         padding-top: 20px;
         pointer-events: none;
@@ -500,7 +500,7 @@
         @include transition(all ease-out 0.3s);
 
         div {
-          width: 180px;
+          width: 160px;
           background-color: $navy;
           border-radius: 20px;
           box-shadow: 0 0 7px 2px rgba(35, 192, 255, 0.6);
@@ -522,16 +522,17 @@
         ul {
           li {
             display: block;
+            text-align: center;
 
             & + li {
-              margin: 7px 0 0 0;
+              margin: 10px 0 0 0;
             }
 
             a {
               display: inline-block;
-              line-height: 1.4;
+              line-height: 1.7;
               color: $white;
-              font-size: 1.5rem;
+              font-size: 1.6rem;
               letter-spacing: -0.7px;
             }
           }
